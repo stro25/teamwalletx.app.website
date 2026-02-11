@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeamWalletX - Sports Team Cash Management Made Simple</title>
+    <title>Features & Pricing - TeamWalletX</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -12,6 +12,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#CCFF00">
+    
     <style>
         * {
             margin: 0;
@@ -24,6 +25,7 @@
             background: #000000;
             color: white;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .container {
@@ -37,6 +39,9 @@
             padding: 20px 0;
             position: relative;
             z-index: 100;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(204, 255, 0, 0.2);
         }
 
         nav {
@@ -51,6 +56,7 @@
             font-weight: bold;
             color: #CCFF00;
             letter-spacing: -1px;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -67,7 +73,8 @@
             font-weight: 500;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: #CCFF00;
         }
 
@@ -87,20 +94,13 @@
         }
 
         /* Hero Section */
-        .hero {
-            padding: 80px 0 120px;
-            position: relative;
-            overflow: hidden;
+        .features-hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(204, 255, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
         }
 
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
+        .features-hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.1;
@@ -111,380 +111,315 @@
             background-clip: text;
         }
 
-        .hero-text p {
+        .features-hero p {
             font-size: 1.25rem;
-            line-height: 1.6;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+        /* Pricing Cards */
+        .pricing-section {
+            padding: 60px 0;
+            background: rgba(0, 0, 0, 0.3);
         }
 
-        .btn-primary {
-            background: #CCFF00;
-            color: black;
-            padding: 16px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(204, 255, 0, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            padding: 16px 32px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            border-color: #CCFF00;
-            background: rgba(204, 255, 0, 0.1);
-        }
-
-        /* App Store Badge */
-        .app-store-badge {
-            display: inline-block;
-            margin: 10px; /* Clear space as per Apple guidelines */
-            transition: transform 0.3s ease;
-        }
-
-        .app-store-badge:hover {
-            transform: translateY(-3px);
-        }
-
-        .app-store-badge-img {
-            height: 60px; /* Minimum 40px, using 60px for better visibility */
-            width: auto;
-            display: block;
-        }
-
-        /* Phone Mockups */
-        .phone-mockups {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 500px;
-        }
-
-        .phone {
-            width: 200px;
-            height: 400px;
-            background: linear-gradient(145deg, #1A1A1A, #0D0D0D);
-            border-radius: 25px;
-            padding: 20px 15px;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .phone:hover {
-            transform: translateY(-10px);
-        }
-
-        .phone-1 {
-            transform: rotate(-15deg) translateX(-50px);
-            z-index: 1;
-        }
-
-        .phone-2 {
-            transform: rotate(0deg);
-            z-index: 3;
-        }
-
-        .phone-3 {
-            transform: rotate(15deg) translateX(50px);
-            z-index: 2;
-        }
-
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, #0D0D0D, #000000);
-            border-radius: 15px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #CCFF00;
-            font-weight: bold;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .phone-screen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-        .phone-screen.placeholder {
-            /* Keep current styling for placeholder text */
-        }
-
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .features-grid {
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
 
-        .feature-card {
+        .pricing-card {
             background: #1A1A1A;
-            padding: 2rem;
             border-radius: 20px;
-            border: 1px solid rgba(204, 255, 0, 0.2);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(204, 255, 0, 0.5);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: #CCFF00;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            color: #CCFF00;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .feature-card p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-        }
-
-        /* Q&A Section */
-        .qa-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, rgba(204, 255, 0, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
+            padding: 2.5rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
             position: relative;
+            overflow: hidden;
         }
 
-        .qa-section::before {
-            content: '';
+        .pricing-card.featured {
+            border-color: #CCFF00;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #CCFF00, transparent);
+            background: #CCFF00;
+            color: black;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
 
-        .qa-header {
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(204, 255, 0, 0.5);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .role-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #CCFF00, #66CC00);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card h3 {
+            color: #CCFF00;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .role-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-period {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .features-list li::before {
+            content: '✅';
+            margin-right: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .upgrade-btn {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: 2px solid #CCFF00;
+            color: #CCFF00;
+            border-radius: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .upgrade-btn:hover {
+            background: #CCFF00;
+            color: black;
+        }
+
+        .pricing-card.featured .upgrade-btn {
+            background: #CCFF00;
+            color: black;
+        }
+
+        .pricing-card.featured .upgrade-btn:hover {
+            background: white;
+        }
+
+        /* Features Matrix */
+        .features-matrix {
+            padding: 80px 0;
+        }
+
+        .matrix-header {
             text-align: center;
             margin-bottom: 4rem;
         }
 
-        .qa-header h2 {
-            font-size: 3rem;
-            font-weight: 800;
+        .matrix-header h2 {
+            font-size: 2.5rem;
+            color: #CCFF00;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #CCFF00, #66CC00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
-        .qa-header p {
-            font-size: 1.25rem;
+        .matrix-header p {
+            font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.8);
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .qa-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .qa-item {
+        .feature-category {
             background: #1A1A1A;
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
-            border: 2px solid rgba(204, 255, 0, 0.1);
+            border-radius: 15px;
+            margin-bottom: 2rem;
             overflow: hidden;
-            transition: all 0.4s ease;
-            position: relative;
+            border: 1px solid rgba(204, 255, 0, 0.2);
         }
 
-        .qa-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #CCFF00, #66CC00);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-            transform-origin: left;
-        }
-
-        .qa-item.active::before {
-            transform: scaleX(1);
-        }
-
-        .qa-item:hover {
-            border-color: rgba(204, 255, 0, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(204, 255, 0, 0.1);
-        }
-
-        .qa-item.active {
-            border-color: rgba(204, 255, 0, 0.4);
-            background: #1F1F1F;
-        }
-
-        .qa-question {
-            padding: 2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .qa-question:hover {
-            background: rgba(204, 255, 0, 0.05);
-        }
-
-        .qa-question h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: white;
-            margin: 0;
-            padding-right: 2rem;
-            line-height: 1.4;
-        }
-
-        .qa-icon {
-            width: 50px;
-            height: 50px;
+        .category-header {
             background: linear-gradient(45deg, #CCFF00, #66CC00);
-            border-radius: 50%;
+            color: black;
+            padding: 1.5rem 2rem;
+            font-weight: bold;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: black;
-            transition: all 0.4s ease;
-            flex-shrink: 0;
-        }
-
-        .qa-item.active .qa-icon {
-            transform: rotate(45deg);
-            background: linear-gradient(45deg, #66CC00, #CCFF00);
-        }
-
-        .qa-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0;
-        }
-
-        .qa-answer.active {
-            max-height: 500px;
-            opacity: 1;
-        }
-
-        .qa-answer-content {
-            padding: 0 2rem 2rem;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.7;
-            font-size: 1.05rem;
-        }
-
-        .qa-answer-content p {
-            margin-bottom: 1rem;
-        }
-
-        .qa-answer-content ul {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .qa-answer-content li {
-            margin-bottom: 0.5rem;
-            position: relative;
-        }
-
-        .qa-answer-content li::marker {
-            color: #CCFF00;
-        }
-
-        .qa-highlight {
-            background: linear-gradient(120deg, rgba(204, 255, 0, 0.2), rgba(204, 255, 0, 0.1));
-            padding: 0.2rem 0.5rem;
-            border-radius: 8px;
-            color: #CCFF00;
-            font-weight: 600;
-        }
-
-        .qa-categories {
-            display: flex;
-            justify-content: center;
             gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
         }
 
-        .qa-category {
+        .feature-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .feature-table th,
+        .feature-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-table th {
+            background: rgba(204, 255, 0, 0.1);
+            color: #CCFF00;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .feature-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .feature-available {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .feature-unavailable {
+            color: #666;
+        }
+
+        .feature-premium {
+            color: #CCFF00;
+            font-weight: bold;
+        }
+
+        /* Pricing Toggle */
+        .pricing-toggle {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .toggle-container {
+            display: inline-flex;
             background: #1A1A1A;
+            border-radius: 30px;
+            padding: 4px;
             border: 2px solid rgba(204, 255, 0, 0.3);
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: none;
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
+            font-size: 0.95rem;
         }
 
-        .qa-category.active,
-        .qa-category:hover {
+        .toggle-btn.active {
             background: #CCFF00;
             color: black;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(204, 255, 0, 0.3);
+        }
+
+        .toggle-btn:hover:not(.active) {
+            background: rgba(204, 255, 0, 0.1);
+        }
+
+        /* Pricing Period Styles */
+        .price-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .price-original {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: line-through;
+            margin-bottom: 0.25rem;
+        }
+
+        .price-savings {
+            background: linear-gradient(45deg, #CCFF00, #66CC00);
+            color: black;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        /* Comparison Toggle */
+        .comparison-toggle {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .comparison-toggle .toggle-btn {
+            background: #1A1A1A;
+            border: 2px solid rgba(204, 255, 0, 0.3);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-toggle .toggle-btn.active {
+            background: #CCFF00;
+            color: black;
+            border-color: #CCFF00;
+        }
+
+        /* Responsive Table */
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         /* Footer */
@@ -610,7 +545,7 @@
             margin-top: 2rem;
         }
 
-        /* Responsive Design */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -620,122 +555,57 @@
                 display: block;
             }
 
-            .hero-content {
+            .features-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
             }
 
-            .hero-text h1 {
-                font-size: 2.5rem;
+            .pricing-card.featured {
+                transform: none;
             }
 
-            .phone-mockups {
-                height: 300px;
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
             }
 
-            .phone {
-                width: 120px;
-                height: 240px;
-                padding: 12px 8px;
+            .feature-table {
+                font-size: 0.8rem;
             }
 
-            .phone-1,
-            .phone-3 {
-                transform: scale(0.8);
+            .feature-table th,
+            .feature-table td {
+                padding: 0.5rem;
             }
 
-            .phone-2 {
-                transform: scale(1);
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .app-store-badge-img {
-                height: 50px; /* Slightly smaller on mobile */
-            }
-
-            /* Q&A Mobile Styles */
-            .qa-header h2 {
-                font-size: 2.5rem;
-            }
-
-            .qa-question {
-                padding: 1.5rem;
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            .qa-question h3 {
-                padding-right: 0;
-                font-size: 1.1rem;
-            }
-
-            .qa-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-
-            .qa-answer-content {
-                padding: 0 1.5rem 1.5rem;
-                font-size: 1rem;
-            }
-
-            .qa-categories {
-                gap: 0.5rem;
-            }
-
-            .qa-category {
+            .toggle-btn {
                 padding: 0.5rem 1rem;
                 font-size: 0.9rem;
             }
         }
 
-        /* Floating elements */
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .floating-dot {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(204, 255, 0, 0.3);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
         }
 
-        .floating-dot:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-dot:nth-child(2) {
-            top: 60%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .floating-dot:nth-child(3) {
-            bottom: 30%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); opacity: 0.3; }
-            50% { transform: translateY(-20px); opacity: 0.8; }
+        /* Feature Icons */
+        .feature-icon-small {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
         }
     </style>
 </head>
@@ -744,13 +614,12 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">TeamWalletX</div>
+                <a href="index.html" class="logo">TeamWalletX</a>
                 <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#qa">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="cta-button" target="_blank" rel="noopener">Start Free Trial</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html" class="active">Features</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="cta-button" target="_blank" rel="noopener">Get the App</a></li>
                 </ul>
                 <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
             </nav>
@@ -761,446 +630,673 @@
     <div class="mobile-menu" id="mobile-menu">
         <button class="mobile-menu-close" id="mobile-menu-close">×</button>
         <div class="mobile-menu-links">
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#qa">FAQ</a>
-            <a href="#contact">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="features.html" class="active">Features & Pricing</a>
+            <a href="index.html#contact">Contact</a>
             <div class="mobile-menu-cta">
-                <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="cta-button" target="_blank" rel="noopener">🎁 Start Free Trial</a>
+                <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="cta-button" target="_blank" rel="noopener">Get the App</a>
             </div>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="floating-elements">
-            <div class="floating-dot"></div>
-            <div class="floating-dot"></div>
-            <div class="floating-dot"></div>
-        </div>
-        
+    <!-- Features Hero -->
+    <section class="features-hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Manage Your Sports Team Like Never Before</h1>
-                    <p>TeamWalletX revolutionizes sports team management with penalty tracking, player management, and team finances. Perfect for coaches, administrators, and players.</p>
-                    <div class="hero-buttons">
-                        <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="app-store-badge" target="_blank" rel="noopener">
-                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge-img">
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="phone-mockups">
-                    <div class="phone phone-1">
-                        <div class="phone-screen">
-                            <!-- Replace with actual screenshot when available -->
-                            <img src="screenshot-analytics.png" alt="Analytics Dashboard" onerror="this.style.display='none'; this.parentElement.innerHTML='📊<br>Analytics<br>Dashboard'; this.parentElement.classList.add('placeholder');">
-                        </div>
-                    </div>
-                    <div class="phone phone-2">
-                        <div class="phone-screen">
-                            <!-- Replace with actual screenshot when available -->
-                            <img src="screenshot-main.png" alt="TeamWalletX Main Screen" onerror="this.style.display='none'; this.parentElement.innerHTML='🏆<br>TeamWalletX<br>Main Screen'; this.parentElement.classList.add('placeholder');">
-                        </div>
-                    </div>
-                    <div class="phone phone-3">
-                        <div class="phone-screen">
-                            <!-- Replace with actual screenshot when available -->
-                            <img src="screenshot-players.png" alt="Player Management" onerror="this.style.display='none'; this.parentElement.innerHTML='👥<br>Player<br>Management'; this.parentElement.classList.add('placeholder');">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2.5rem; color: #CCFF00; margin-bottom: 1rem;">Powerful Features</h2>
-                <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8);">Everything you need to manage your sports team effectively</p>
-            </div>
+            <h1>Role-Based Features & Pricing</h1>
+            <p>Choose the perfect plan for your role. From players to administrators, we have features tailored for everyone on your team.</p>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Penalty Tracking</h3>
-                    <p>Track team penalties and fines with automated calculations, payment reminders, and detailed financial reports.</p>
+            <!-- Feature Highlights -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📦</div>
+                    <div style="color: #CCFF00; font-weight: 600;">Equipment</div>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Full Inventory</div>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3>Player Management</h3>
-                    <p>Comprehensive player rosters, performance tracking, and team coordination tools for seamless management.</p>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📢</div>
+                    <div style="color: #CCFF00; font-weight: 600;">Communication</div>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Stay Connected</div>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Gamification</h3>
-                    <p>Achievements, leaderboards, and engagement features that motivate players and build team spirit.</p>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📅</div>
+                    <div style="color: #CCFF00; font-weight: 600;">Calendar</div>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Never Miss</div>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Analytics</h3>
-                    <p>Detailed insights into team performance, financial health, and player statistics with visual reports.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💳</div>
-                    <h3>Payment Processing</h3>
-                    <p>Secure payment tracking and processing for team dues, penalties, and other financial obligations.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Privacy & Security</h3>
-                    <p>Enterprise-grade security with encrypted data storage and comprehensive privacy protection.</p>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏆</div>
+                    <div style="color: #CCFF00; font-weight: 600;">Gamification</div>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Stay Motivated</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing-section" id="pricing" style="padding: 100px 0; background: linear-gradient(135deg, rgba(204, 255, 0, 0.08) 0%, rgba(0, 0, 0, 0.9) 100%);">
+    <section class="pricing-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2.5rem; color: #CCFF00; margin-bottom: 1rem;">Role-Based Pricing</h2>
-                <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto 1.5rem;">Choose the plan that fits your role. Each tier includes all features from lower tiers.</p>
-                
-                <!-- Free Trial Banner -->
-                <div style="display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(90deg, #FF6B35, #FF8C42); padding: 12px 24px; border-radius: 30px; margin-bottom: 2rem;">
-                    <span style="font-size: 1.5rem;">🎁</span>
-                    <span style="color: white; font-weight: bold; font-size: 1.1rem;">First Month FREE on All Plans!</span>
-                    <span style="font-size: 1.5rem;">🎉</span>
+            <!-- Pricing Toggle -->
+            <div class="pricing-toggle">
+                <div class="toggle-container">
+                    <button class="toggle-btn active" id="monthly-toggle">Monthly</button>
+                    <button class="toggle-btn" id="yearly-toggle">Yearly</button>
                 </div>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto;">
-                <!-- Player -->
-                <div style="background: #1A1A1A; border-radius: 20px; padding: 2rem; border: 2px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; position: relative;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(45deg, #4A90D9, #67A8E8); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem;">🎮</div>
-                    <h3 style="color: #CCFF00; font-size: 1.4rem; margin-bottom: 0.5rem;">Player</h3>
-                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 1rem;">For team members</p>
-                    <div style="font-size: 2.5rem; font-weight: bold; color: white; margin-bottom: 0.5rem;">€1.99<span style="font-size: 1rem; color: rgba(255, 255, 255, 0.6);">/month</span></div>
-                    <p style="color: #FF8C42; font-size: 0.85rem; margin-bottom: 1.5rem;">First month FREE</p>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Personal achievements & badges</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Detailed personal statistics</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Team chat access</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Enhanced notifications</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Personal data export</li>
-                    </ul>
-                </div>
-                
-                <!-- Staff -->
-                <div style="background: #1A1A1A; border-radius: 20px; padding: 2rem; border: 2px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(45deg, #9B59B6, #B370CF); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem;">👥</div>
-                    <h3 style="color: #CCFF00; font-size: 1.4rem; margin-bottom: 0.5rem;">Staff</h3>
-                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 1rem;">For support staff</p>
-                    <div style="font-size: 2.5rem; font-weight: bold; color: white; margin-bottom: 0.5rem;">€3.99<span style="font-size: 1rem; color: rgba(255, 255, 255, 0.6);">/month</span></div>
-                    <p style="color: #FF8C42; font-size: 0.85rem; margin-bottom: 1.5rem;">First month FREE</p>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ All Player features</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Team analytics dashboard</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Calendar event management</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Basic team data export</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Up to 50 team members</li>
-                    </ul>
-                </div>
-                
-                <!-- Coach (Featured) -->
-                <div style="background: #1A1A1A; border-radius: 20px; padding: 2rem; border: 2px solid #CCFF00; transition: all 0.3s ease; position: relative; transform: scale(1.02);">
-                    <div style="position: absolute; top: 0; left: 0; right: 0; background: #CCFF00; color: black; text-align: center; padding: 0.5rem; font-weight: bold; font-size: 0.85rem; border-radius: 18px 18px 0 0;">MOST POPULAR</div>
-                    <div style="margin-top: 1.5rem;"></div>
-                    <div style="width: 50px; height: 50px; background: linear-gradient(45deg, #F39C12, #F1C40F); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem;">🏆</div>
-                    <h3 style="color: #CCFF00; font-size: 1.4rem; margin-bottom: 0.5rem;">Coach</h3>
-                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 1rem;">For team coaches</p>
-                    <div style="font-size: 2.5rem; font-weight: bold; color: white; margin-bottom: 0.5rem;">€5.99<span style="font-size: 1rem; color: rgba(255, 255, 255, 0.6);">/month</span></div>
-                    <p style="color: #FF8C42; font-size: 0.85rem; margin-bottom: 1.5rem;">First month FREE</p>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ All Staff features</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Unlimited team size</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Unlimited penalties</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Custom penalty categories</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Team management export</li>
-                    </ul>
-                </div>
-                
-                <!-- Admin -->
-                <div style="background: #1A1A1A; border-radius: 20px; padding: 2rem; border: 2px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(45deg, #CCFF00, #9ACD32); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem;">👑</div>
-                    <h3 style="color: #CCFF00; font-size: 1.4rem; margin-bottom: 0.5rem;">Admin</h3>
-                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 1rem;">Complete control</p>
-                    <div style="font-size: 2.5rem; font-weight: bold; color: white; margin-bottom: 0.5rem;">€7.99<span style="font-size: 1rem; color: rgba(255, 255, 255, 0.6);">/month</span></div>
-                    <p style="color: #FF8C42; font-size: 0.85rem; margin-bottom: 1.5rem;">First month FREE</p>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ All Coach features</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Financial management</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Advanced team analytics</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Full data export</li>
-                        <li style="padding: 0.4rem 0; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">✅ Priority support</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Yearly Savings Note -->
-            <div style="text-align: center; margin-top: 2.5rem;">
-                <p style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">
-                    💰 <strong style="color: #CCFF00;">Save 16%</strong> with yearly plans — get 2 months free!
+                <p style="margin-top: 1rem; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">
+                    Save up to 2 months with yearly billing
                 </p>
-                <div style="margin-top: 1rem; display: inline-flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-                    <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Player: €19.99/year</span>
-                    <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Staff: €39.99/year</span>
-                    <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Coach: €59.99/year</span>
-                    <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Admin: €79.99/year</span>
-                </div>
             </div>
             
-            <!-- CTA Button -->
-            <div style="text-align: center; margin-top: 2.5rem;">
-                <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" style="display: inline-flex; align-items: center; gap: 0.75rem; background: #CCFF00; color: black; padding: 16px 32px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: all 0.3s ease;" target="_blank" rel="noopener">
-                    <span>🎁</span> Start Your Free Trial
-                </a>
-                <p style="color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; margin-top: 1rem;">No payment required for the first month • Cancel anytime</p>
+            <div class="pricing-grid">
+                <!-- Player -->
+                <div class="pricing-card fade-in-up" data-monthly-price="€1.99" data-yearly-price="€19.99">
+                    <div class="role-icon">🎮</div>
+                    <h3>Player</h3>
+                    <p class="role-subtitle">Perfect for team members</p>
+                    <div class="price-container">
+                        <div class="price-original" style="display: none;">€23.88</div>
+                        <div class="price">€1.99</div>
+                        <div class="price-period">per month</div>
+                        <div class="price-savings" style="display: none;">Save €3.89</div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Personal achievements & badges</li>
+                        <li>Detailed personal statistics</li>
+                        <li>Clean sheet tracking</li>
+                        <li>Team chat access</li>
+                        <li>Enhanced notifications</li>
+                        <li>Personal data export</li>
+                        <li>90-day history access</li>
+                    </ul>
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="upgrade-btn" target="_blank" rel="noopener">Get Started</a>
+                </div>
+
+                <!-- Staff -->
+                <div class="pricing-card fade-in-up" data-monthly-price="€3.49" data-yearly-price="€34.99">
+                    <div class="role-icon">👥</div>
+                    <h3>Staff</h3>
+                    <p class="role-subtitle">For team support staff</p>
+                    <div class="price-container">
+                        <div class="price-original" style="display: none;">€41.88</div>
+                        <div class="price">€3.49</div>
+                        <div class="price-period">per month</div>
+                        <div class="price-savings" style="display: none;">Save €6.89</div>
+                    </div>
+                    <ul class="features-list">
+                        <li>All Player features</li>
+                        <li>Team analytics dashboard</li>
+                        <li>Calendar event management</li>
+                        <li>Basic team data export</li>
+                        <li>50-user team limit</li>
+                        <li>100 penalty limit</li>
+                        <li>6-month history access</li>
+                    </ul>
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="upgrade-btn" target="_blank" rel="noopener">Get Started</a>
+                </div>
+
+                <!-- Coach -->
+                <div class="pricing-card featured fade-in-up" data-monthly-price="€4.99" data-yearly-price="€49.99">
+                    <div class="role-icon">🏆</div>
+                    <h3>Coach</h3>
+                    <p class="role-subtitle">Advanced team management</p>
+                    <div class="price-container">
+                        <div class="price-original" style="display: none;">€59.88</div>
+                        <div class="price">€4.99</div>
+                        <div class="price-period">per month</div>
+                        <div class="price-savings" style="display: none;">Save €9.89</div>
+                    </div>
+                    <ul class="features-list">
+                        <li>All Staff features</li>
+                        <li>Unlimited team size</li>
+                        <li>Unlimited penalties</li>
+                        <li>Custom penalty categories</li>
+                        <li>Team management export</li>
+                        <li>Advanced team tools</li>
+                        <li>1-year history access</li>
+                    </ul>
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="upgrade-btn" target="_blank" rel="noopener">Get Started</a>
+                </div>
+
+                <!-- Admin -->
+                <div class="pricing-card fade-in-up" data-monthly-price="€6.99" data-yearly-price="€69.99">
+                    <div class="role-icon">👑</div>
+                    <h3>Admin</h3>
+                    <p class="role-subtitle">Complete system control</p>
+                    <div class="price-container">
+                        <div class="price-original" style="display: none;">€83.88</div>
+                        <div class="price">€6.99</div>
+                        <div class="price-period">per month</div>
+                        <div class="price-savings" style="display: none;">Save €13.89</div>
+                    </div>
+                    <ul class="features-list">
+                        <li>All Coach features</li>
+                        <li>Financial management</li>
+                        <li>Advanced analytics</li>
+                        <li>All data export types</li>
+                        <li>Team settings control</li>
+                        <li>Priority support</li>
+                        <li>Unlimited history</li>
+                    </ul>
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="upgrade-btn" target="_blank" rel="noopener">Get Started</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Q&A Section -->
-    <section class="qa-section" id="qa">
+    <!-- Features Matrix -->
+    <section class="features-matrix">
         <div class="container">
-            <div class="qa-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Everything you need to know about TeamWalletX and how it can transform your sports team management experience.</p>
+            <div class="matrix-header">
+                <h2>Complete Feature Comparison</h2>
+                <p>See exactly what features are available for each role and subscription tier. Our role-based system ensures you only pay for what you need.</p>
             </div>
 
-            <div class="qa-categories">
-                <div class="qa-category active" data-category="all">All Questions</div>
-                <div class="qa-category" data-category="features">Features</div>
-                <div class="qa-category" data-category="pricing">Pricing</div>
-                <div class="qa-category" data-category="roles">Roles & Permissions</div>
-                <div class="qa-category" data-category="technical">Technical</div>
+            <!-- Gamification Features -->
+            <div class="feature-category">
+                <div class="category-header">
+                    <span class="feature-icon-small">🎮</span>
+                    Gamification & Personal Features
+                </div>
+                <div class="table-container">
+                    <table class="feature-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Player Free</th>
+                                <th>Player Premium</th>
+                                <th>Staff Premium</th>
+                                <th>Coach Premium</th>
+                                <th>Admin Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Achievements & Badges</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Personal Statistics</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Clean Sheet Tracking</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Leaderboards</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="qa-container">
-                <!-- Getting Started -->
-                <div class="qa-item" data-category="features">
-                    <div class="qa-question">
-                        <h3>What is TeamWalletX and how does it help sports teams?</h3>
-                        <div class="qa-icon">+</div>
-                    </div>
-                    <div class="qa-answer">
-                        <div class="qa-answer-content">
-                            <p>TeamWalletX is a comprehensive <span class="qa-highlight">sports team management platform</span> that revolutionizes how teams handle penalties, finances, and player coordination.</p>
-                            <p>Our app helps teams with:</p>
-                            <ul>
-                                <li><strong>Penalty Tracking:</strong> Automated fine calculations and payment reminders</li>
-                                <li><strong>Financial Management:</strong> Complete team budget oversight and transaction tracking</li>
-                                <li><strong>Player Engagement:</strong> Gamification features including achievements and leaderboards</li>
-                                <li><strong>Team Analytics:</strong> Detailed insights into performance and financial health</li>
-                                <li><strong>Role-Based Access:</strong> Different permission levels for players, staff, coaches, and administrators</li>
-                            </ul>
-                        </div>
-                    </div>
+            <!-- Communication Features -->
+            <div class="feature-category">
+                <div class="category-header">
+                    <span class="feature-icon-small">💬</span>
+                    Communication Features
                 </div>
-
-                <!-- Pricing -->
-                <div class="qa-item" data-category="pricing">
-                    <div class="qa-question">
-                        <h3>How much does TeamWalletX cost and what are the pricing options?</h3>
-                        <div class="qa-icon">+</div>
-                    </div>
-                    <div class="qa-answer">
-                        <div class="qa-answer-content">
-                            <p>TeamWalletX offers <span class="qa-highlight">role-based pricing</span> to ensure you only pay for the features you need:</p>
-                            <ul>
-                                <li><strong>Player:</strong> €1.99/month (€19.99/year) - Personal stats, achievements, and team chat</li>
-                                <li><strong>Staff:</strong> €3.99/month (€39.99/year) - Team analytics and calendar management</li>
-                                <li><strong>Coach:</strong> €5.99/month (€59.99/year) - Advanced team tools and penalty management</li>
-                                <li><strong>Admin:</strong> €7.99/month (€79.99/year) - Complete financial control and priority support</li>
-                            </ul>
-                            <p>All yearly plans include <span class="qa-highlight">2 months free</span>, providing significant savings for long-term commitments.</p>
-                        </div>
-                    </div>
+                <div class="table-container">
+                    <table class="feature-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Player Free</th>
+                                <th>Player Premium</th>
+                                <th>Staff Premium</th>
+                                <th>Coach Premium</th>
+                                <th>Admin Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Team Chat Access</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Enhanced Notifications</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Push Notifications</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
 
-                <!-- Roles -->
-                <div class="qa-item" data-category="roles">
-                    <div class="qa-question">
-                        <h3>What's the difference between Player, Staff, Coach, and Admin roles?</h3>
-                        <div class="qa-icon">+</div>
-                    </div>
-                    <div class="qa-answer">
-                        <div class="qa-answer-content">
-                            <p>Our <span class="qa-highlight">role-based system</span> ensures appropriate access levels for different team members:</p>
-                            <ul>
-                                <li><strong>Player:</strong> Focus on personal performance with achievements, statistics, and team communication</li>
-                                <li><strong>Staff:</strong> Support team operations with analytics dashboards and event management capabilities</li>
-                                <li><strong>Coach:</strong> Lead the team with advanced management tools, penalty assignment, and strategic insights</li>
-                                <li><strong>Admin:</strong> Complete system control including financial management, user permissions, and comprehensive reporting</li>
-                            </ul>
-                            <p>Each role builds upon the previous tier, ensuring seamless team hierarchy and appropriate feature access.</p>
-                        </div>
-                    </div>
+            <!-- Calendar Management -->
+            <div class="feature-category">
+                <div class="category-header">
+                    <span class="feature-icon-small">📅</span>
+                    Calendar Management
                 </div>
-
-                <!-- Features -->
-                <div class="qa-item" data-category="features">
-                    <div class="qa-question">
-                        <h3>What gamification features does TeamWalletX offer?</h3>
-                        <div class="qa-icon">+</div>
-                    </div>
-                    <div class="qa-answer">
-                        <div class="qa-answer-content">
-                            <p>TeamWalletX includes comprehensive <span class="qa-highlight">gamification elements</span> to boost team engagement:</p>
-                            <ul>
-                                <li><strong>Achievement System:</strong> Unlock badges for various accomplishments and milestones</li>
-                                <li><strong>Leaderboards:</strong> Track player rankings across different performance metrics</li>
-                                <li><strong>Clean Sheet Tracking:</strong> Special recognition for defensive achievements</li>
-                                <li><strong>Personal Statistics:</strong> Detailed performance analytics for individual improvement</li>
-                                <li><strong>Team Challenges:</strong> Collaborative goals that unite the entire squad</li>
-                            </ul>
-                            <p>These features transform routine team management into an engaging, motivational experience that builds team spirit.</p>
-                        </div>
-                    </div>
+                <div class="table-container">
+                    <table class="feature-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Player Free</th>
+                                <th>Player Premium</th>
+                                <th>Staff Premium</th>
+                                <th>Coach Premium</th>
+                                <th>Admin Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>View Calendar</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Create Events</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Edit Events</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Delete Events</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
 
-                <!-- Technical -->
-                <div class="qa-item" data-category="technical">
-                    <div class="qa-question">
-                        <h3>Is my team's data secure and private?</h3>
-                        <div class="qa-icon">+</div>
-                    </div>
-                    <div class="qa-answer">
-                        <div class="qa-answer-content">
-                            <p>Absolutely. TeamWalletX implements <span class="qa-highlight">enterprise-grade security</span> to protect your team's sensitive information:</p>
-                            <ul>
-                                <li><strong>End-to-End Encryption:</strong> All data is encrypted both in transit and at rest</li>
-                                <li><strong>GDPR Compliance:</strong> Full compliance with European data protection regulations</li>
-                                <li><strong>Role-Based Access:</strong> Granular permissions ensure users only see relevant data</li>
-                                <li><strong>Regular Security Audits:</strong> Continuous monitoring and updates to maintain the highest security standards</li>
-                                <li><strong>Data Export Options:</strong> Complete control over your team's data with comprehensive export capabilities</li>
-                            </ul>
-                            <p>Your privacy and data security are our top priorities, backed by industry-leading protection measures.</p>
-                        </div>
-                    </div>
+            <!-- Penalty Management -->
+            <div class="feature-category">
+                <div class="category-header">
+                    <span class="feature-icon-small">⚖️</span>
+                    Penalty Management
                 </div>
-
-                <!-- Features -->
-                <div class="qa-item" data-category="features">
-                    <div class="qa-question">
-                        <h3>How does the penalty tracking system work?</h3>
-                        <div class="qa-icon">+</div>
-                    </div>
-                    <div class="qa-answer">
-                        <div class="qa-answer-content">
-                            <p>Our <span class="qa-highlight">automated penalty system</span> streamlines fine management and ensures accountability:</p>
-                            <ul>
-                                <li><strong>Custom Categories:</strong> Create penalty types specific to your team's rules (late arrivals, missed training, etc.)</li>
-                                <li><strong>Automatic Calculations:</strong> Set fixed amounts or percentage-based fines with instant computation</li>
-                                <li><strong>Payment Tracking:</strong> Monitor who has paid, pending amounts, and payment history</li>
-                                <li><strong>Reminder System:</strong> Automated notifications for outstanding penalties</li>
-                                <li><strong>Financial Reports:</strong> Comprehensive analytics on team penalty trends and collections</li>
-                            </ul>
-                            <p>Coaches can assign penalties instantly, while admins maintain complete financial oversight and control.</p>
-                        </div>
-                    </div>
+                <div class="table-container">
+                    <table class="feature-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Player Free</th>
+                                <th>Player Premium</th>
+                                <th>Staff Premium</th>
+                                <th>Coach Premium</th>
+                                <th>Admin Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>View Penalties</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Create Penalties</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Assign Penalties</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Mark as Paid</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Admin Only</td>
+                            </tr>
+                            <tr>
+                                <td>Custom Categories</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
 
-                <!-- Technical -->
-                <div class="qa-item" data-category="technical">
-                    <div class="qa-question">
-                        <h3>Is TeamWalletX available on Android or just iOS?</h3>
-                        <div class="qa-icon">+</div>
-                    </div>
-                    <div class="qa-answer">
-                        <div class="qa-answer-content">
-                            <p>Currently, TeamWalletX is available exclusively on <span class="qa-highlight">iOS devices</span> through the App Store.</p>
-                            <p>We chose to focus on iOS first to deliver the best possible user experience with:</p>
-                            <ul>
-                                <li><strong>Native Performance:</strong> Optimized specifically for iPhone and iPad</li>
-                                <li><strong>Seamless Integration:</strong> Works perfectly with iOS features like notifications and widgets</li>
-                                <li><strong>Premium Design:</strong> Takes full advantage of iOS design principles and capabilities</li>
-                            </ul>
-                            <p>While we're currently iOS-exclusive, we're constantly evaluating expansion opportunities based on user demand and feedback.</p>
-                        </div>
-                    </div>
+            <!-- Financial Management -->
+            <div class="feature-category">
+                <div class="category-header">
+                    <span class="feature-icon-small">💰</span>
+                    Financial Management
                 </div>
-
-                <!-- Roles -->
-                <div class="qa-item" data-category="roles">
-                    <div class="qa-question">
-                        <h3>Can team members have multiple roles or switch between them?</h3>
-                        <div class="qa-icon">+</div>
-                    </div>
-                    <div class="qa-answer">
-                        <div class="qa-answer-content">
-                            <p>Yes! TeamWalletX supports <span class="qa-highlight">flexible role management</span> to accommodate real-world team structures:</p>
-                            <ul>
-                                <li><strong>Multiple Roles:</strong> Users can hold several roles simultaneously (e.g., Player + Staff)</li>
-                                <li><strong>Role Switching:</strong> Seamlessly switch between different role perspectives within the app</li>
-                                <li><strong>Subscription Stacking:</strong> Premium features are unlocked based on your highest-tier subscription</li>
-                                <li><strong>Dynamic Permissions:</strong> Access levels adjust automatically based on your active roles</li>
-                            </ul>
-                            <p>This flexibility ensures that assistant coaches, player-captains, and other hybrid roles can access exactly the features they need.</p>
-                        </div>
-                    </div>
+                <div class="table-container">
+                    <table class="feature-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Player Free</th>
+                                <th>Player Premium</th>
+                                <th>Staff Premium</th>
+                                <th>Coach Premium</th>
+                                <th>Admin Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>View Personal Balance</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>View Team Balance</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Admin Only</td>
+                            </tr>
+                            <tr>
+                                <td>Create Transactions</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Admin Only</td>
+                            </tr>
+                            <tr>
+                                <td>Financial Reports</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Admin Only</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
 
-                <!-- Pricing -->
-                <div class="qa-item" data-category="pricing">
-                    <div class="qa-question">
-                        <h3>Is there a free trial or free version available?</h3>
-                        <div class="qa-icon">+</div>
-                    </div>
-                    <div class="qa-answer">
-                        <div class="qa-answer-content">
-                            <p>Yes! TeamWalletX offers <span class="qa-highlight">the first month FREE</span> on all premium plans:</p>
-                            <ul>
-                                <li><strong>🎁 1 Month Free Trial:</strong> Try any premium plan free for 30 days</li>
-                                <li><strong>No Payment Required:</strong> You won't be charged until your trial ends</li>
-                                <li><strong>Cancel Anytime:</strong> If it's not for you, cancel before the trial ends - no questions asked</li>
-                                <li><strong>Full Access:</strong> Get complete access to all premium features during your trial</li>
-                            </ul>
-                            <p>There's also a <span class="qa-highlight">free tier</span> with basic features:</p>
-                            <ul>
-                                <li><strong>Basic Access:</strong> View team information, penalties, and calendar events</li>
-                                <li><strong>Up to 16 Players:</strong> Perfect for smaller teams to get started</li>
-                                <li><strong>No Time Restrictions:</strong> Use the free tier indefinitely</li>
-                            </ul>
-                        </div>
-                    </div>
+            <!-- Equipment & Inventory Management -->
+            <div class="feature-category">
+                <div class="category-header">
+                    <span class="feature-icon-small">📦</span>
+                    Equipment & Inventory Management
                 </div>
+                <div class="table-container">
+                    <table class="feature-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Player Free</th>
+                                <th>Player Premium</th>
+                                <th>Staff Premium</th>
+                                <th>Coach Premium</th>
+                                <th>Admin Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>View Assigned Equipment</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Request Equipment</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Report Equipment Issues</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Manage Full Inventory</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Staff+</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Assign Equipment to Players</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Staff+</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Approve/Deny Requests</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Staff+</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Resolve Equipment Issues</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Staff+</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Inventory Analytics</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Staff+</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-                <!-- Features -->
-                <div class="qa-item" data-category="features">
-                    <div class="qa-question">
-                        <h3>How does the team analytics and reporting system work?</h3>
-                        <div class="qa-icon">+</div>
-                    </div>
-                    <div class="qa-answer">
-                        <div class="qa-answer-content">
-                            <p>TeamWalletX provides <span class="qa-highlight">comprehensive analytics</span> to help teams make data-driven decisions:</p>
-                            <ul>
-                                <li><strong>Performance Metrics:</strong> Track individual and team statistics over time</li>
-                                <li><strong>Financial Insights:</strong> Monitor penalty collections, team expenses, and budget health</li>
-                                <li><strong>Trend Analysis:</strong> Identify patterns in player behavior and team performance</li>
-                                <li><strong>Custom Reports:</strong> Generate detailed reports for specific time periods or metrics</li>
-                                <li><strong>Visual Dashboards:</strong> Easy-to-understand charts and graphs for quick insights</li>
-                            </ul>
-                            <p>Different roles have access to relevant analytics - from personal stats for players to comprehensive financial reports for administrators.</p>
-                        </div>
-                    </div>
+            <!-- Team Communication -->
+            <div class="feature-category">
+                <div class="category-header">
+                    <span class="feature-icon-small">📢</span>
+                    Team Communication
+                </div>
+                <div class="table-container">
+                    <table class="feature-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Player Free</th>
+                                <th>Player Premium</th>
+                                <th>Staff Premium</th>
+                                <th>Coach Premium</th>
+                                <th>Admin Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>View Announcements</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Create Announcements</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Priority Levels (Normal, Important, Urgent)</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>View Team Votings</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Participate in Votings</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Create Team Votings</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Team Chat Access</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Read Receipts Tracking</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Data Export & Privacy -->
+            <div class="feature-category">
+                <div class="category-header">
+                    <span class="feature-icon-small">📤</span>
+                    Data Export & Privacy
+                </div>
+                <div class="table-container">
+                    <table class="feature-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Player Free</th>
+                                <th>Player Premium</th>
+                                <th>Staff Premium</th>
+                                <th>Coach Premium</th>
+                                <th>Admin Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Export Personal Data</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Own Data Only</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                                <td class="feature-available">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Export Team Data</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Basic</td>
+                                <td class="feature-premium">✅ Management</td>
+                                <td class="feature-premium">✅ All Types</td>
+                            </tr>
+                            <tr>
+                                <td>Export Financial Data</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-unavailable">❌</td>
+                                <td class="feature-premium">✅ Admin Only</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -1215,9 +1311,9 @@
                 
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <p><a href="#features">Features</a></p>
-                    <p><a href="#download">Download</a></p>
-                    <p><a href="#support">Support</a></p>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="features.html">Features</a></p>
+                    <p><a href="index.html#contact">Support</a></p>
                 </div>
             </div>
             
@@ -1275,127 +1371,96 @@
                     closeMobileMenu();
                 }
             });
-
-            // Q&A Functionality
-            const qaItems = document.querySelectorAll('.qa-item');
-            const qaCategories = document.querySelectorAll('.qa-category');
-
-            // Toggle Q&A items
-            qaItems.forEach(item => {
-                const question = item.querySelector('.qa-question');
-                const answer = item.querySelector('.qa-answer');
-                const icon = item.querySelector('.qa-icon');
-
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all other items
-                    qaItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                            otherItem.querySelector('.qa-answer').classList.remove('active');
-                            otherItem.querySelector('.qa-icon').textContent = '+';
-                        }
-                    });
-
-                    // Toggle current item
-                    if (isActive) {
-                        item.classList.remove('active');
-                        answer.classList.remove('active');
-                        icon.textContent = '+';
-                    } else {
-                        item.classList.add('active');
-                        answer.classList.add('active');
-                        icon.textContent = '−';
-                    }
-                });
-            });
-
-            // Category filtering
-            qaCategories.forEach(category => {
-                category.addEventListener('click', () => {
-                    const selectedCategory = category.dataset.category;
-
-                    // Update active category
-                    qaCategories.forEach(cat => cat.classList.remove('active'));
-                    category.classList.add('active');
-
-                    // Filter Q&A items
-                    qaItems.forEach(item => {
-                        const itemCategory = item.dataset.category;
-                        
-                        if (selectedCategory === 'all' || itemCategory === selectedCategory) {
-                            item.style.display = 'block';
-                            // Add staggered animation
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'translateY(0)';
-                            }, 100);
-                        } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                item.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-
-                    // Close all open items when filtering
-                    qaItems.forEach(item => {
-                        item.classList.remove('active');
-                        item.querySelector('.qa-answer').classList.remove('active');
-                        item.querySelector('.qa-icon').textContent = '+';
-                    });
-                });
-            });
-
-            // Smooth scroll animation for Q&A items
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const qaObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }, index * 100);
-                    }
-                });
-            }, observerOptions);
-
-            // Initialize Q&A items for animation
-            qaItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(30px)';
-                item.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-                qaObserver.observe(item);
-            });
         });
 
-        // Smooth scrolling for anchor links
+        // Pricing toggle functionality
+        const monthlyToggle = document.getElementById('monthly-toggle');
+        const yearlyToggle = document.getElementById('yearly-toggle');
+        const pricingCards = document.querySelectorAll('.pricing-card');
+
+        function switchPricing(isYearly) {
+            pricingCards.forEach(card => {
+                const monthlyPrice = card.dataset.monthlyPrice;
+                const yearlyPrice = card.dataset.yearlyPrice;
+                const priceElement = card.querySelector('.price');
+                const periodElement = card.querySelector('.price-period');
+                const originalElement = card.querySelector('.price-original');
+                const savingsElement = card.querySelector('.price-savings');
+
+                if (isYearly) {
+                    // Calculate monthly equivalent and savings
+                    const yearlyAmount = parseFloat(yearlyPrice.replace('€', ''));
+                    const monthlyAmount = parseFloat(monthlyPrice.replace('€', ''));
+                    const monthlyEquivalent = (yearlyAmount / 12).toFixed(2);
+                    const totalMonthlyCost = monthlyAmount * 12;
+                    const savings = (totalMonthlyCost - yearlyAmount).toFixed(2);
+
+                    priceElement.textContent = `€${monthlyEquivalent}`;
+                    periodElement.textContent = 'per month (billed yearly)';
+                    originalElement.textContent = `€${monthlyAmount}`;
+                    originalElement.style.display = 'block';
+                    savingsElement.textContent = `Save €${savings}`;
+                    savingsElement.style.display = 'block';
+                } else {
+                    priceElement.textContent = monthlyPrice;
+                    periodElement.textContent = 'per month';
+                    originalElement.style.display = 'none';
+                    savingsElement.style.display = 'none';
+                }
+            });
+        }
+
+        monthlyToggle.addEventListener('click', () => {
+            monthlyToggle.classList.add('active');
+            yearlyToggle.classList.remove('active');
+            switchPricing(false);
+        });
+
+        yearlyToggle.addEventListener('click', () => {
+            yearlyToggle.classList.add('active');
+            monthlyToggle.classList.remove('active');
+            switchPricing(true);
+        });
+
+        // Add smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
-        // Add floating animation to hero dots
-        const dots = document.querySelectorAll('.floating-dot');
-        dots.forEach((dot, index) => {
-            const randomDelay = Math.random() * 2;
-            const randomDuration = 4 + Math.random() * 4;
-            dot.style.animationDelay = `${randomDelay}s`;
-            dot.style.animationDuration = `${randomDuration}s`;
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all pricing cards
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Observe all feature categories
+        document.querySelectorAll('.feature-category').forEach(category => {
+            category.style.opacity = '0';
+            category.style.transform = 'translateY(30px)';
+            category.style.transition = 'all 0.6s ease-out';
+            observer.observe(category);
         });
     </script>
 </body>
