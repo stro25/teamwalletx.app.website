@@ -657,6 +657,28 @@
                 height: 50px; /* Slightly smaller on mobile */
             }
 
+            /* Feature Showcase Mobile */
+            .showcase-content {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
+            .showcase-visual {
+                order: 1 !important;
+            }
+
+            .showcase-text {
+                order: 2 !important;
+            }
+
+            .showcase-text h2 {
+                font-size: 2rem !important;
+            }
+
+            .showcase-text p {
+                font-size: 1rem !important;
+            }
+
             /* Q&A Mobile Styles */
             .qa-header h2 {
                 font-size: 2.5rem;
@@ -737,6 +759,32 @@
             0%, 100% { transform: translateY(0px); opacity: 0.3; }
             50% { transform: translateY(-20px); opacity: 0.8; }
         }
+
+        /* What's New Section Styles */
+        .whats-new .feature-card-new {
+            background: #1A1A1A;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 2px solid rgba(204, 255, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .whats-new .feature-card-new:hover {
+            transform: translateY(-10px);
+            border-color: rgba(204, 255, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(204, 255, 0, 0.2);
+        }
+
+        /* CTA Section Hover Effect */
+        .cta-section a img:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        /* Showcase Visual Hover */
+        .showcase-visual:hover {
+            border-color: rgba(204, 255, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(204, 255, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -814,6 +862,30 @@
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="stats-section" style="padding: 60px 0; background: rgba(204, 255, 0, 0.05); border-top: 1px solid rgba(204, 255, 0, 0.2); border-bottom: 1px solid rgba(204, 255, 0, 0.2);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; text-align: center;">
+                <div>
+                    <div style="font-size: 3rem; font-weight: bold; color: #CCFF00; margin-bottom: 0.5rem;">9+</div>
+                    <div style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem;">Core Features</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: bold; color: #CCFF00; margin-bottom: 0.5rem;">4</div>
+                    <div style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem;">Role-Based Tiers</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: bold; color: #CCFF00; margin-bottom: 0.5rem;">100%</div>
+                    <div style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem;">GDPR Compliant</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: bold; color: #CCFF00; margin-bottom: 0.5rem;">24/7</div>
+                    <div style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem;">Real-Time Sync</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
@@ -848,15 +920,316 @@
                 </div>
                 
                 <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Equipment Management</h3>
+                    <p>Complete inventory system for tracking team equipment, assignments, requests, and issue resolution with real-time monitoring.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📢</div>
+                    <h3>Team Communication</h3>
+                    <p>Announcements, team votings, and integrated chat to keep everyone connected and informed in real-time.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Calendar & Events</h3>
+                    <p>Manage training sessions, matches, and team events with automated reminders and availability tracking.</p>
+                </div>
+                
+                <div class="feature-card">
                     <div class="feature-icon">💳</div>
-                    <h3>Payment Processing</h3>
-                    <p>Secure payment tracking and processing for team dues, penalties, and other financial obligations.</p>
+                    <h3>Financial Management</h3>
+                    <p>Comprehensive financial tracking for team budgets, transactions, and payment processing with detailed reports.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🔒</div>
                     <h3>Privacy & Security</h3>
-                    <p>Enterprise-grade security with encrypted data storage and comprehensive privacy protection.</p>
+                    <p>Enterprise-grade security with encrypted data storage, GDPR compliance, and comprehensive privacy protection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Features Section -->
+    <section class="detailed-features" style="padding: 100px 0; background: #000000;">
+        <div class="container">
+            <!-- Equipment Management -->
+            <div class="feature-showcase" style="margin-bottom: 100px;">
+                <div class="showcase-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div class="showcase-text">
+                        <div style="display: inline-block; background: rgba(204, 255, 0, 0.1); padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 1rem;">
+                            <span style="color: #CCFF00; font-weight: bold; font-size: 0.9rem;">📦 NEW FEATURE</span>
+                        </div>
+                        <h2 style="font-size: 2.5rem; color: #CCFF00; margin-bottom: 1.5rem;">Complete Equipment & Inventory Management</h2>
+                        <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; line-height: 1.7;">
+                            Transform how your team manages equipment with our comprehensive inventory system. Track every item, manage assignments, and handle equipment requests seamlessly.
+                        </p>
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(204, 255, 0, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <span style="font-size: 1.2rem;">📋</span>
+                                </div>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 0.25rem;">Full Inventory Tracking</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Track every item with size, condition, location, and purchase information. Upload photos and manage equipment lifecycle from purchase to retirement.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(204, 255, 0, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <span style="font-size: 1.2rem;">👤</span>
+                                </div>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 0.25rem;">Player Assignments</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Assign equipment to players with due dates, track returns, assess damage, and manage late return fees automatically.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(204, 255, 0, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <span style="font-size: 1.2rem;">📝</span>
+                                </div>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 0.25rem;">Request Management</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Players can request equipment with size and priority. Staff approve/deny requests with notes and track fulfillment status.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(204, 255, 0, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <span style="font-size: 1.2rem;">🔧</span>
+                                </div>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 0.25rem;">Issue Reporting</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Report damaged, lost, or defective equipment with severity levels. Track resolution progress and maintain equipment quality.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-visual" style="background: linear-gradient(145deg, #1A1A1A, #0D0D0D); border-radius: 20px; padding: 3rem; border: 2px solid rgba(204, 255, 0, 0.2); text-align: center;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">📦</div>
+                        <h3 style="color: #CCFF00; margin-bottom: 1rem;">Inventory Dashboard</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;">
+                            <div style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 15px;">
+                                <div style="font-size: 2rem; color: #CCFF00; font-weight: bold;">100%</div>
+                                <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">Utilization Rate</div>
+                            </div>
+                            <div style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 15px;">
+                                <div style="font-size: 2rem; color: #CCFF00; font-weight: bold;">Real-Time</div>
+                                <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">Tracking</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Communication -->
+            <div class="feature-showcase" style="margin-bottom: 100px;">
+                <div class="showcase-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div class="showcase-visual" style="background: linear-gradient(145deg, #1A1A1A, #0D0D0D); border-radius: 20px; padding: 3rem; border: 2px solid rgba(204, 255, 0, 0.2); text-align: center; order: 1;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">📢</div>
+                        <h3 style="color: #CCFF00; margin-bottom: 1rem;">Communication Hub</h3>
+                        <div style="display: grid; gap: 1rem; margin-top: 2rem;">
+                            <div style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 15px; text-align: left;">
+                                <div style="color: #CCFF00; font-weight: bold; margin-bottom: 0.5rem;">📣 Announcements</div>
+                                <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">Priority-based team updates</div>
+                            </div>
+                            <div style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 15px; text-align: left;">
+                                <div style="color: #CCFF00; font-weight: bold; margin-bottom: 0.5rem;">🗳️ Team Voting</div>
+                                <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">Democratic decision making</div>
+                            </div>
+                            <div style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 15px; text-align: left;">
+                                <div style="color: #CCFF00; font-weight: bold; margin-bottom: 0.5rem;">💬 Team Chat</div>
+                                <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">Real-time messaging</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-text" style="order: 2;">
+                        <div style="display: inline-block; background: rgba(204, 255, 0, 0.1); padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 1rem;">
+                            <span style="color: #CCFF00; font-weight: bold; font-size: 0.9rem;">💬 STAY CONNECTED</span>
+                        </div>
+                        <h2 style="font-size: 2.5rem; color: #CCFF00; margin-bottom: 1.5rem;">Powerful Team Communication</h2>
+                        <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; line-height: 1.7;">
+                            Keep your entire team informed and engaged with multiple communication channels. From urgent announcements to casual team chat, everything in one place.
+                        </p>
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(204, 255, 0, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <span style="font-size: 1.2rem;">📣</span>
+                                </div>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 0.25rem;">Priority Announcements</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Send team-wide announcements with Normal, Important, or Urgent priority levels. Track read receipts to ensure message delivery.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(204, 255, 0, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <span style="font-size: 1.2rem;">🗳️</span>
+                                </div>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 0.25rem;">Team Votings</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Create polls and votings for team decisions. Multiple choice options, deadline tracking, and real-time results visualization.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(204, 255, 0, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <span style="font-size: 1.2rem;">💬</span>
+                                </div>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 0.25rem;">Integrated Team Chat</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Real-time messaging for casual team communication. Share updates, coordinate activities, and build team camaraderie.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar & Events -->
+            <div class="feature-showcase">
+                <div class="showcase-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div class="showcase-text">
+                        <div style="display: inline-block; background: rgba(204, 255, 0, 0.1); padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 1rem;">
+                            <span style="color: #CCFF00; font-weight: bold; font-size: 0.9rem;">📅 ORGANIZATION</span>
+                        </div>
+                        <h2 style="font-size: 2.5rem; color: #CCFF00; margin-bottom: 1.5rem;">Smart Calendar & Event Management</h2>
+                        <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; line-height: 1.7;">
+                            Never miss a training session or match again. Organize your team's schedule with an intelligent calendar system that keeps everyone on the same page.
+                        </p>
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(204, 255, 0, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <span style="font-size: 1.2rem;">📆</span>
+                                </div>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 0.25rem;">Event Creation & Management</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Create training sessions, matches, and team events with location, time, and description. Staff and coaches can manage the full schedule.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(204, 255, 0, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <span style="font-size: 1.2rem;">🔔</span>
+                                </div>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 0.25rem;">Automated Reminders</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Smart notifications remind players about upcoming events. Configurable reminder times ensure no one misses important activities.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(204, 255, 0, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <span style="font-size: 1.2rem;">✅</span>
+                                </div>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 0.25rem;">Attendance Tracking</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Track player availability and attendance for all events. Monitor patterns and ensure optimal team participation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-visual" style="background: linear-gradient(145deg, #1A1A1A, #0D0D0D); border-radius: 20px; padding: 3rem; border: 2px solid rgba(204, 255, 0, 0.2);">
+                        <div style="font-size: 4rem; margin-bottom: 1rem; text-align: center;">📅</div>
+                        <h3 style="color: #CCFF00; margin-bottom: 2rem; text-align: center;">Your Team Schedule</h3>
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="background: rgba(204, 255, 0, 0.1); padding: 1rem; border-radius: 10px; border-left: 4px solid #CCFF00;">
+                                <div style="color: #CCFF00; font-weight: bold; font-size: 0.9rem; margin-bottom: 0.25rem;">TODAY</div>
+                                <div style="color: white; font-size: 1.1rem;">Training Session</div>
+                                <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">18:00 - Stadium</div>
+                            </div>
+                            <div style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 10px; border-left: 4px solid rgba(255, 255, 255, 0.3);">
+                                <div style="color: rgba(255, 255, 255, 0.7); font-weight: bold; font-size: 0.9rem; margin-bottom: 0.25rem;">TOMORROW</div>
+                                <div style="color: white; font-size: 1.1rem;">Team Meeting</div>
+                                <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">19:00 - Club House</div>
+                            </div>
+                            <div style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 10px; border-left: 4px solid rgba(255, 255, 255, 0.3);">
+                                <div style="color: rgba(255, 255, 255, 0.7); font-weight: bold; font-size: 0.9rem; margin-bottom: 0.25rem;">SATURDAY</div>
+                                <div style="color: white; font-size: 1.1rem;">Match Day</div>
+                                <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">15:00 - Away</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's New Section -->
+    <section class="whats-new" style="padding: 80px 0; background: linear-gradient(135deg, rgba(204, 255, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <div style="display: inline-block; background: rgba(204, 255, 0, 0.2); padding: 0.75rem 1.5rem; border-radius: 30px; margin-bottom: 1.5rem;">
+                    <span style="color: #CCFF00; font-weight: bold; font-size: 1rem;">✨ LATEST UPDATES</span>
+                </div>
+                <h2 style="font-size: 3rem; color: #CCFF00; margin-bottom: 1rem;">What's New in TeamWalletX</h2>
+                <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); max-width: 700px; margin: 0 auto;">
+                    We're constantly improving TeamWalletX with powerful new features based on your feedback
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="feature-card-new">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(45deg, #CCFF00, #66CC00); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1.5rem;">📦</div>
+                    <h3 style="color: #CCFF00; font-size: 1.5rem; margin-bottom: 1rem;">Equipment Management</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 1rem;">
+                        Complete inventory system with assignment tracking, equipment requests, and issue resolution. Manage your team's gear like never before.
+                    </p>
+                    <div style="display: inline-block; background: rgba(204, 255, 0, 0.1); padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.85rem; color: #CCFF00; font-weight: 600;">
+                        NEW IN 2025
+                    </div>
+                </div>
+
+                <div class="feature-card-new">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(45deg, #CCFF00, #66CC00); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1.5rem;">📢</div>
+                    <h3 style="color: #CCFF00; font-size: 1.5rem; margin-bottom: 1rem;">Enhanced Communication</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 1rem;">
+                        Priority announcements, team votings, and integrated chat keep everyone connected. All communication in one unified platform.
+                    </p>
+                    <div style="display: inline-block; background: rgba(204, 255, 0, 0.1); padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.85rem; color: #CCFF00; font-weight: 600;">
+                        RECENTLY UPDATED
+                    </div>
+                </div>
+
+                <div class="feature-card-new">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(45deg, #CCFF00, #66CC00); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1.5rem;">📅</div>
+                    <h3 style="color: #CCFF00; font-size: 1.5rem; margin-bottom: 1rem;">Smart Calendar</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 1rem;">
+                        Organize training sessions, matches, and team events with automated reminders. Never miss an important activity again.
+                    </p>
+                    <div style="display: inline-block; background: rgba(204, 255, 0, 0.1); padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.85rem; color: #CCFF00; font-weight: 600;">
+                        IMPROVED
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="padding: 100px 0; background: linear-gradient(135deg, #000000 0%, #1A1A1A 100%); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; background: radial-gradient(circle at 50% 50%, #CCFF00 0%, transparent 70%);"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 2rem; background: linear-gradient(45deg, #CCFF00, #66CC00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    Ready to Transform Your Team Management?
+                </h2>
+                <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 3rem; line-height: 1.7;">
+                    Join thousands of teams already using TeamWalletX to streamline operations, boost engagement, and build winning cultures.
+                </p>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" target="_blank" rel="noopener" style="display: inline-block;">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 70px; transition: transform 0.3s ease; filter: drop-shadow(0 10px 20px rgba(204, 255, 0, 0.3));">
+                    </a>
+                    <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #CCFF00; font-size: 1.5rem;">⭐</span>
+                            <span style="color: white; font-size: 1rem;">iOS 17.0+</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #CCFF00; font-size: 1.5rem;">🔒</span>
+                            <span style="color: white; font-size: 1rem;">GDPR Compliant</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #CCFF00; font-size: 1.5rem;">🚀</span>
+                            <span style="color: white; font-size: 1rem;">Free to Start</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -911,9 +1284,9 @@
                             <p>TeamWalletX offers <span class="qa-highlight">role-based pricing</span> to ensure you only pay for the features you need:</p>
                             <ul>
                                 <li><strong>Player:</strong> €1.99/month (€19.99/year) - Personal stats, achievements, and team chat</li>
-                                <li><strong>Staff:</strong> €3.99/month (€39.99/year) - Team analytics and calendar management</li>
-                                <li><strong>Coach:</strong> €5.99/month (€59.99/year) - Advanced team tools and penalty management</li>
-                                <li><strong>Admin:</strong> €7.99/month (€79.99/year) - Complete financial control and priority support</li>
+                                <li><strong>Staff:</strong> €3.49/month (€34.99/year) - Team analytics and calendar management</li>
+                                <li><strong>Coach:</strong> €4.99/month (€49.99/year) - Advanced team tools and penalty management</li>
+                                <li><strong>Admin:</strong> €6.99/month (€69.99/year) - Complete financial control and priority support</li>
                             </ul>
                             <p>All yearly plans include <span class="qa-highlight">2 months free</span>, providing significant savings for long-term commitments.</p>
                         </div>
@@ -1080,6 +1453,69 @@
                                 <li><strong>Visual Dashboards:</strong> Easy-to-understand charts and graphs for quick insights</li>
                             </ul>
                             <p>Different roles have access to relevant analytics - from personal stats for players to comprehensive financial reports for administrators.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipment Management -->
+                <div class="qa-item" data-category="features">
+                    <div class="qa-question">
+                        <h3>How does the Equipment & Inventory Management system work?</h3>
+                        <div class="qa-icon">+</div>
+                    </div>
+                    <div class="qa-answer">
+                        <div class="qa-answer-content">
+                            <p>Our <span class="qa-highlight">complete inventory management system</span> transforms how teams handle equipment:</p>
+                            <ul>
+                                <li><strong>Full Inventory Tracking:</strong> Track every item with photos, sizes, conditions, locations, and purchase information</li>
+                                <li><strong>Player Assignments:</strong> Assign equipment to players with due dates, track returns, and assess damage automatically</li>
+                                <li><strong>Equipment Requests:</strong> Players can request equipment with size and priority; staff approve/deny with tracking</li>
+                                <li><strong>Issue Reporting:</strong> Report damaged, lost, or defective items with severity levels and resolution tracking</li>
+                                <li><strong>Real-Time Analytics:</strong> Monitor utilization rates, total value, and inventory health at a glance</li>
+                            </ul>
+                            <p>Perfect for managing jerseys, training gear, medical supplies, and all team equipment in one centralized system.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Communication -->
+                <div class="qa-item" data-category="features">
+                    <div class="qa-question">
+                        <h3>What team communication features does TeamWalletX offer?</h3>
+                        <div class="qa-icon">+</div>
+                    </div>
+                    <div class="qa-answer">
+                        <div class="qa-answer-content">
+                            <p>TeamWalletX includes <span class="qa-highlight">powerful communication tools</span> to keep your team connected:</p>
+                            <ul>
+                                <li><strong>Priority Announcements:</strong> Send team-wide updates with Normal, Important, or Urgent priority levels and track read receipts</li>
+                                <li><strong>Team Votings:</strong> Create polls for democratic decision-making with multiple options, deadlines, and real-time results</li>
+                                <li><strong>Integrated Team Chat:</strong> Real-time messaging for casual team communication and coordination (premium feature)</li>
+                                <li><strong>Notification System:</strong> Smart alerts ensure everyone stays informed about important updates</li>
+                                <li><strong>Role-Based Access:</strong> Admins and coaches can create announcements, while all players can participate and respond</li>
+                            </ul>
+                            <p>All communication happens in one place, reducing email clutter and ensuring nothing gets missed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar Management -->
+                <div class="qa-item" data-category="features">
+                    <div class="qa-question">
+                        <h3>How does the Calendar & Event Management feature work?</h3>
+                        <div class="qa-icon">+</div>
+                    </div>
+                    <div class="qa-answer">
+                        <div class="qa-answer-content">
+                            <p>Our <span class="qa-highlight">smart calendar system</span> keeps your team perfectly organized:</p>
+                            <ul>
+                                <li><strong>Event Creation:</strong> Staff and coaches can create training sessions, matches, and team events with full details</li>
+                                <li><strong>Automated Reminders:</strong> Configurable notifications ensure players never miss important activities</li>
+                                <li><strong>Attendance Tracking:</strong> Monitor player availability and participation for all events</li>
+                                <li><strong>Event Details:</strong> Include location, time, description, and any special instructions for each event</li>
+                                <li><strong>Unified View:</strong> All team members see the same schedule, ensuring perfect coordination</li>
+                            </ul>
+                            <p>Whether it's regular training, big matches, or team social events, the calendar keeps everyone on the same page.</p>
                         </div>
                     </div>
                 </div>
