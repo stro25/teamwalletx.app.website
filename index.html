@@ -425,7 +425,7 @@
             padding-top: var(--nav-height);
             padding-bottom: 80px;
             position: relative;
-            overflow: hidden;
+            overflow: clip;
         }
 
         .hero-bg {
@@ -570,6 +570,7 @@
             justify-content: center;
             align-items: center;
             height: 620px;
+            padding: 0 130px;
         }
 
         .phone-wrapper {
@@ -812,29 +813,34 @@
         /* Floating UI elements */
         .float-card {
             position: absolute;
-            background: var(--bg-glass);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(18, 18, 18, 0.92);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255,255,255,0.18);
             border-radius: var(--radius-lg);
             padding: 12px 16px;
             min-width: 170px;
+            box-shadow:
+                0 8px 32px rgba(0,0,0,0.6),
+                0 2px 8px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.08);
         }
 
         .float-card-1 {
             top: 40px;
-            right: -110px;
+            right: -115px;
             animation: floatY 4s ease-in-out infinite;
         }
 
         .float-card-2 {
             bottom: 100px;
-            left: -120px;
+            left: -125px;
             animation: floatY 4s ease-in-out infinite 1.5s;
         }
 
         .float-card-3 {
             top: 220px;
-            right: -120px;
+            right: -125px;
             animation: floatY 4s ease-in-out infinite 3s;
         }
 
@@ -844,20 +850,20 @@
         }
 
         .float-card-icon {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
         }
 
         .float-card-title {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: 700;
-            color: white;
-            margin-bottom: 2px;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 3px;
         }
 
         .float-card-sub {
-            font-size: 0.67rem;
-            color: var(--text-muted);
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.55);
         }
 
         .float-badge {
@@ -867,14 +873,15 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(204, 255, 0, 0.1);
-            border: 1px solid var(--brand-border);
+            background: rgba(204, 255, 0, 0.15);
+            border: 1px solid rgba(204, 255, 0, 0.4);
             border-radius: var(--radius-full);
             padding: 8px 14px;
             font-size: 0.72rem;
             font-weight: 600;
             color: var(--brand);
             white-space: nowrap;
+            box-shadow: 0 4px 20px rgba(204, 255, 0, 0.12), 0 8px 24px rgba(0,0,0,0.5);
             animation: floatY 5s ease-in-out infinite 0.5s;
         }
 
@@ -2033,10 +2040,11 @@
         @media (max-width: 1100px) {
             .hero-inner { gap: 40px; }
             .iphone-frame { width: 240px; height: 495px; }
-            .float-card-1 { right: -80px; }
-            .float-card-2 { left: -90px; }
-            .float-card-3 { right: -90px; }
-            .float-badge { left: -70px; }
+            .hero-visual { padding: 0 100px; }
+            .float-card-1 { right: -95px; }
+            .float-card-2 { left: -95px; }
+            .float-card-3 { right: -95px; }
+            .float-badge { left: -75px; }
             .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
             .bento-card.large { grid-column: span 12; }
             .bento-card.medium-wide { grid-column: span 12; }
@@ -2060,13 +2068,13 @@
             .hero-actions { justify-content: center; }
             .hero-trust { justify-content: center; }
 
-            .hero-visual { height: 480px; }
+            .hero-visual { height: 480px; padding: 0 60px; }
             .iphone-frame { width: 220px; height: 455px; }
 
             .float-card-1, .float-card-2, .float-card-3 {
                 display: none;
             }
-            .float-badge { left: -40px; top: -10px; }
+            .float-badge { left: -50px; top: -10px; }
 
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .stat-item + .stat-item::before { display: none; }
@@ -2104,16 +2112,7 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="nav-logo">
-                    <svg viewBox="0 0 320 320" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-                        <path d="M105.21,162.2h116.49c17.47-15.86,28.44-38.75,28.44-64.2,0-47.88-38.81-86.69-86.69-86.69s-86.69,38.81-86.69,86.69c0,25.45,10.97,48.34,28.44,64.2Z" fill="#CCFF00"/>
-                        <rect x="25.32" y="118.86" width="269.35" height="189.83" rx="21.05" stroke="white" stroke-width="14" stroke-miterlimit="10"/>
-                        <path d="M51.01,161.32h217.97c14.19,0,25.69,12.6,25.69,28.15" stroke="white" stroke-width="14" stroke-linecap="round" stroke-miterlimit="10"/>
-                        <path d="M294.68,253.38h-76c-7.21,0-13.06-5.85-13.06-13.06v-27.04c0-7.21,5.85-13.06,13.06-13.06h76" fill="#CCFF00"/>
-                        <circle cx="234.83" cy="226.8" r="10.56" stroke="white" stroke-width="10" stroke-miterlimit="10"/>
-                        <polygon points="132.34 42.17 95.5 71.02 95.5 86.49 108.47 76.76 108.47 122.96 120.44 130.62 120.44 67.59 132.34 57.66" fill="none" stroke="white" stroke-width="14" stroke-miterlimit="10" stroke-linejoin="round"/>
-                        <polygon points="185.42 140.71 185.36 36.47 173.48 27.24 173.48 105.34 167.91 87.76 156.7 87.73 151.12 105.31 151.12 27.22 139.25 36.45 139.18 140.51 150.87 147.87 162.3 110.56 173.74 147.9 185.42 140.71" fill="none" stroke="white" stroke-width="14" stroke-miterlimit="10" stroke-linejoin="round"/>
-                        <polygon points="194.92 40.92 207.95 50.47 207.95 64.48 219.1 76.8 219.1 58.5 231.42 67.87 231.42 116.69 219.28 123.92 219.28 104.55 208.04 111.42 208.04 130.52 195.01 137.93 195.01 105.44 208.75 88.49 194.92 68.05" fill="none" stroke="white" stroke-width="14" stroke-miterlimit="10" stroke-linejoin="round"/>
-                    </svg>
+                    <img src="logo-white.svg" width="38" height="38" alt="TEAM WALLET X logo" style="flex-shrink:0;">
                     TEAM WALLET X
                 </a>
                 <ul class="nav-links">
@@ -3085,13 +3084,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <svg viewBox="0 0 320 320" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-                            <path d="M105.21,162.2h116.49c17.47-15.86,28.44-38.75,28.44-64.2,0-47.88-38.81-86.69-86.69-86.69s-86.69,38.81-86.69,86.69c0,25.45,10.97,48.34,28.44,64.2Z" fill="#CCFF00"/>
-                            <rect x="25.32" y="118.86" width="269.35" height="189.83" rx="21.05" stroke="white" stroke-width="14" stroke-miterlimit="10"/>
-                            <path d="M51.01,161.32h217.97c14.19,0,25.69,12.6,25.69,28.15" stroke="white" stroke-width="14" stroke-linecap="round" stroke-miterlimit="10"/>
-                            <path d="M294.68,253.38h-76c-7.21,0-13.06-5.85-13.06-13.06v-27.04c0-7.21,5.85-13.06,13.06-13.06h76" fill="#CCFF00"/>
-                            <circle cx="234.83" cy="226.8" r="10.56" stroke="white" stroke-width="10" stroke-miterlimit="10"/>
-                        </svg>
+                        <img src="logo-white.svg" width="32" height="32" alt="TEAM WALLET X logo" style="flex-shrink:0;">
                         TEAM WALLET X
                     </div>
                     <p>The all-in-one iOS app for sports team management. Penalties, finances, equipment, and communication — all in one powerful platform.</p>
