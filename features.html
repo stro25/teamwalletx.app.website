@@ -641,6 +641,130 @@
             border-color: white;
         }
 
+        /* TEAM Plan — full-width banner card below the 4 individual plans */
+        .pricing-team-row {
+            margin-top: 20px;
+        }
+
+        .pricing-card.team-plan {
+            border-color: var(--brand-border-strong);
+            background: linear-gradient(120deg, rgba(204,255,0,0.10) 0%, rgba(0,0,0,0) 55%), var(--bg-card);
+            box-shadow: 0 0 0 1px rgba(204,255,0,0.18), 0 0 60px rgba(204,255,0,0.12);
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 0 32px;
+            align-items: center;
+            padding: 28px 32px;
+        }
+
+        .pricing-card.team-plan:hover {
+            box-shadow: 0 0 0 1px rgba(204,255,0,0.35), var(--shadow-glow-strong);
+            transform: translateY(-4px);
+        }
+
+        .team-plan-left { display: flex; flex-direction: column; gap: 4px; min-width: 200px; }
+        .team-plan-center { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+        .team-plan-right { text-align: right; min-width: 160px; }
+
+        .team-plan-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            background: var(--brand);
+            color: #000;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            width: fit-content;
+        }
+
+        .team-plan-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--brand);
+        }
+
+        .team-plan-sub {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .team-feat-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .team-feat-item .tf-check {
+            color: var(--brand);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .team-price-block { margin-bottom: 12px; }
+
+        .team-price-main {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--brand);
+        }
+
+        .team-price-period {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .team-price-savings {
+            display: inline-block;
+            padding: 3px 8px;
+            background: rgba(204,255,0,0.12);
+            border: 1px solid var(--brand-border);
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--brand);
+            margin-top: 4px;
+            margin-bottom: 12px;
+        }
+
+        .team-cta {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--brand);
+            color: #000;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .team-cta:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(204,255,0,0.3);
+        }
+
+        @media (max-width: 900px) {
+            .pricing-card.team-plan {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .team-plan-right { text-align: left; }
+            .team-plan-left { min-width: unset; }
+            .team-plan-right { min-width: unset; }
+        }
+
         .pricing-note {
             text-align: center;
             margin-top: 28px;
@@ -731,7 +855,7 @@
         /* Role header columns */
         .role-columns {
             display: grid;
-            grid-template-columns: 2fr repeat(5, 1fr);
+            grid-template-columns: 2fr repeat(6, 1fr);
             border-bottom: 1px solid var(--border);
         }
 
@@ -761,7 +885,7 @@
 
         .feature-row {
             display: grid;
-            grid-template-columns: 2fr repeat(5, 1fr);
+            grid-template-columns: 2fr repeat(6, 1fr);
             border-bottom: 1px solid var(--border);
             transition: var(--transition);
         }
@@ -822,8 +946,12 @@
 
         .table-scroll .role-columns,
         .table-scroll .feature-row {
-            min-width: 600px;
+            min-width: 700px;
         }
+
+        /* Team column accent */
+        .role-col-header.team-col { background: rgba(204,255,0,0.05); color: var(--brand); }
+        .feat-cell.team-col { background: rgba(204,255,0,0.03); }
 
         /* =============================================
            CTA SECTION
@@ -1240,7 +1368,40 @@
                 </div>
             </div>
 
-            <p class="pricing-note reveal">Yearly plans save the equivalent of 2 months compared to monthly billing. Prices in EUR, billed via Apple App Store.</p>
+            <!-- TEAM Plan (full-width banner) -->
+            <div class="pricing-team-row reveal">
+                <div class="pricing-card team-plan" data-monthly="19.99" data-yearly="149.99" data-orig-monthly="239.88" data-savings="89.89">
+                    <div class="team-plan-left">
+                        <div class="team-plan-badge">🏟️ Best Value · Team Plan</div>
+                        <div class="team-plan-name">TEAM</div>
+                        <div class="team-plan-sub">One admin pays — every member gets premium access</div>
+                    </div>
+
+                    <div class="team-plan-center">
+                        <div class="team-feat-item"><span class="tf-check">✓</span>Full premium access for every team member</div>
+                        <div class="team-feat-item"><span class="tf-check">✓</span>Up to 50 members covered under one subscription</div>
+                        <div class="team-feat-item"><span class="tf-check">✓</span>New members automatically get premium on joining</div>
+                        <div class="team-feat-item"><span class="tf-check">✓</span>All role feature hubs unlocked for everyone</div>
+                        <div class="team-feat-item"><span class="tf-check">✓</span>Unlimited penalties &amp; custom categories</div>
+                        <div class="team-feat-item"><span class="tf-check">✓</span>Full financial management &amp; reporting</div>
+                        <div class="team-feat-item"><span class="tf-check">✓</span>Season management &amp; archives</div>
+                        <div class="team-feat-item"><span class="tf-check">✓</span>All data export types &amp; advanced analytics</div>
+                        <div class="team-feat-item"><span class="tf-check">✓</span>Priority support</div>
+                    </div>
+
+                    <div class="team-plan-right">
+                        <div class="team-price-block">
+                            <div class="team-price-main"><sup style="font-size:1rem;">€</sup><span class="price-val">19.99</span></div>
+                            <div class="team-price-period price-period-text">per month</div>
+                            <div class="price-original" style="display:none; font-size:0.8rem; color:var(--text-muted); text-decoration:line-through; margin-top:4px;">€19.99/mo</div>
+                            <div class="price-savings team-price-savings">Save €89.89 yearly</div>
+                        </div>
+                        <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="team-cta" target="_blank" rel="noopener">Get Team Plan →</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="pricing-note reveal">Yearly plans save the equivalent of 2 months compared to monthly billing. Prices in EUR, billed via Apple App Store. The TEAM plan covers up to 50 members under a single subscription paid by the admin.</p>
         </div>
     </section>
 
@@ -1269,6 +1430,7 @@
                             <div class="role-col-header">Staff+</div>
                             <div class="role-col-header highlight">Coach+</div>
                             <div class="role-col-header">Admin+</div>
+                            <div class="role-col-header team-col">🏟️ Team</div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Achievements &amp; Badges</div>
@@ -1277,6 +1439,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Personal Statistics</div>
@@ -1285,6 +1448,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Clean Sheet Tracking</div>
@@ -1293,6 +1457,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Leaderboards</div>
@@ -1301,6 +1466,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                     </div>
                 </div>
@@ -1322,6 +1488,7 @@
                             <div class="role-col-header">Staff+</div>
                             <div class="role-col-header highlight">Coach+</div>
                             <div class="role-col-header">Admin+</div>
+                            <div class="role-col-header team-col">🏟️ Team</div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">View Announcements</div>
@@ -1330,6 +1497,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Create Announcements</div>
@@ -1338,6 +1506,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Priority Levels (Normal / Important / Urgent)</div>
@@ -1346,6 +1515,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Team Votings (View &amp; Participate)</div>
@@ -1354,6 +1524,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Create Team Votings</div>
@@ -1362,6 +1533,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Team Chat Access</div>
@@ -1370,6 +1542,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Read Receipts Tracking</div>
@@ -1378,6 +1551,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Push Notifications</div>
@@ -1386,6 +1560,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                     </div>
                 </div>
@@ -1407,6 +1582,7 @@
                             <div class="role-col-header">Staff+</div>
                             <div class="role-col-header highlight">Coach+</div>
                             <div class="role-col-header">Admin+</div>
+                            <div class="role-col-header team-col">🏟️ Team</div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">View Calendar</div>
@@ -1415,6 +1591,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Create Events</div>
@@ -1423,6 +1600,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Edit Events</div>
@@ -1431,6 +1609,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Delete Events</div>
@@ -1439,6 +1618,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Attendance Tracking</div>
@@ -1447,6 +1627,25 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feat-name">Lineup Builder (linked to matches)</div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell highlight-col"><span class="check-special">Coach role</span></div>
+                            <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feat-name">Training Attendance Logging</div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell highlight-col"><span class="check-special">Coach role</span></div>
+                            <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                     </div>
                 </div>
@@ -1468,6 +1667,7 @@
                             <div class="role-col-header">Staff+</div>
                             <div class="role-col-header highlight">Coach+</div>
                             <div class="role-col-header">Admin+</div>
+                            <div class="role-col-header team-col">🏟️ Team</div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">View Penalties</div>
@@ -1476,6 +1676,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Create Penalties</div>
@@ -1484,6 +1685,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Assign Penalties</div>
@@ -1492,6 +1694,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Mark as Paid</div>
@@ -1500,6 +1703,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-no">✕</span></div>
                             <div class="feat-cell"><span class="check-special">Admin only</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Custom Penalty Categories</div>
@@ -1508,6 +1712,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                     </div>
                 </div>
@@ -1529,6 +1734,7 @@
                             <div class="role-col-header">Staff+</div>
                             <div class="role-col-header highlight">Coach+</div>
                             <div class="role-col-header">Admin+</div>
+                            <div class="role-col-header team-col">🏟️ Team</div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">View Personal Balance</div>
@@ -1537,6 +1743,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">View Team Balance</div>
@@ -1545,6 +1752,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-no">✕</span></div>
                             <div class="feat-cell"><span class="check-special">Admin only</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Create Transactions</div>
@@ -1553,6 +1761,7 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-no">✕</span></div>
                             <div class="feat-cell"><span class="check-special">Admin only</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Financial Reports</div>
@@ -1561,6 +1770,16 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-no">✕</span></div>
                             <div class="feat-cell"><span class="check-special">Admin only</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feat-name">Budget Planner (Admin role hub)</div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell highlight-col"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                     </div>
                 </div>
@@ -1582,6 +1801,7 @@
                             <div class="role-col-header">Staff+</div>
                             <div class="role-col-header highlight">Coach+</div>
                             <div class="role-col-header">Admin+</div>
+                            <div class="role-col-header team-col">🏟️ Team</div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">View Assigned Equipment</div>
@@ -1590,6 +1810,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Request Equipment</div>
@@ -1598,6 +1819,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Report Equipment Issues</div>
@@ -1606,6 +1828,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Manage Full Inventory</div>
@@ -1614,6 +1837,7 @@
                             <div class="feat-cell"><span class="check-special">Staff+</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Assign Equipment to Players</div>
@@ -1622,6 +1846,7 @@
                             <div class="feat-cell"><span class="check-special">Staff+</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Approve / Deny Equipment Requests</div>
@@ -1630,6 +1855,7 @@
                             <div class="feat-cell"><span class="check-special">Staff+</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Resolve Equipment Issues</div>
@@ -1638,14 +1864,25 @@
                             <div class="feat-cell"><span class="check-special">Staff+</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
-                            <div class="feat-name">Inventory Analytics</div>
+                            <div class="feat-name">Inventory Analytics &amp; AI Insights</div>
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell"><span class="check-special">Staff+</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feat-name">Kit Manager Pre-Match Checklists</div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell highlight-col"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-special">Kit Mgr role</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                     </div>
                 </div>
@@ -1667,6 +1904,7 @@
                             <div class="role-col-header">Staff+</div>
                             <div class="role-col-header highlight">Coach+</div>
                             <div class="role-col-header">Admin+</div>
+                            <div class="role-col-header team-col">🏟️ Team</div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Export Personal Data</div>
@@ -1675,6 +1913,7 @@
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
                             <div class="feat-cell highlight-col"><span class="check-yes">✓</span></div>
                             <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Export Team Data</div>
@@ -1683,6 +1922,7 @@
                             <div class="feat-cell"><span class="check-special">Basic</span></div>
                             <div class="feat-cell highlight-col"><span class="check-special">Management</span></div>
                             <div class="feat-cell"><span class="check-special">All types</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                         <div class="feature-row">
                             <div class="feat-name">Export Financial Data</div>
@@ -1691,6 +1931,16 @@
                             <div class="feat-cell"><span class="check-no">✕</span></div>
                             <div class="feat-cell highlight-col"><span class="check-no">✕</span></div>
                             <div class="feat-cell"><span class="check-special">Admin only</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feat-name">Season Archives Access (read-only)</div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-no">✕</span></div>
+                            <div class="feat-cell highlight-col"><span class="check-no">✕</span></div>
+                            <div class="feat-cell"><span class="check-yes">✓</span></div>
+                            <div class="feat-cell team-col"><span class="check-yes">✓</span></div>
                         </div>
                     </div>
                 </div>
