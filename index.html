@@ -1544,6 +1544,3787 @@
             border-color: white;
         }
 
+        /* TEAM plan full-width card */
+        .plan-team-row {
+            margin-top: 20px;
+        }
+
+        .plan-card.team-plan {
+            border-color: var(--brand-border-strong);
+            background: linear-gradient(120deg, rgba(204,255,0,0.10) 0%, rgba(0,0,0,0) 50%), var(--bg-card);
+            box-shadow: 0 0 0 1px rgba(204,255,0,0.18), 0 0 60px rgba(204,255,0,0.12);
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 0 28px;
+            align-items: center;
+            padding: 28px 32px;
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--brand-border-strong);
+            transition: var(--transition);
+        }
+
+        .plan-card.team-plan:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 0 1px rgba(204,255,0,0.35), var(--shadow-glow-strong);
+        }
+
+        .tp-left { display: flex; flex-direction: column; gap: 4px; min-width: 180px; }
+        .tp-center { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+        .tp-right { text-align: right; min-width: 160px; }
+
+        .tp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 10px;
+            background: var(--brand);
+            color: #000;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 5px;
+            width: fit-content;
+        }
+
+        .tp-name { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--brand); }
+        .tp-sub  { font-size: 0.85rem; color: var(--text-secondary); }
+
+        .tp-feat { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-secondary); }
+        .tp-feat .tc { color: var(--brand); font-size: 0.82rem; flex-shrink: 0; }
+
+        .tp-price { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.03em; color: var(--brand); margin-bottom: 2px; }
+        .tp-period { font-size: 0.78rem; color: var(--text-muted); }
+        .tp-savings {
+            display: inline-block; padding: 2px 8px;
+            background: rgba(204,255,0,0.1); border: 1px solid var(--brand-border);
+            border-radius: 6px; font-size: 0.7rem; font-weight: 600; color: var(--brand);
+            margin-top: 4px; margin-bottom: 12px;
+        }
+
+        .tp-cta {
+            display: inline-block; padding: 11px 22px;
+            background: var(--brand); color: #000;
+            border-radius: 999px; font-size: 0.88rem; font-weight: 700;
+            text-decoration: none; transition: var(--transition); white-space: nowrap;
+        }
+        .tp-cta:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(204,255,0,0.3); }
+
+        @media (max-width: 768px) {
+            .plan-card.team-plan { grid-template-columns: 1fr; gap: 20px; }
+            .tp-right { text-align: left; }
+        }
+
+        .pricing-preview-footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .pricing-preview-footer p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        /* =============================================
+           EMAIL CAPTURE
+        ============================================= */
+        .email-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(204,255,0,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .email-card {
+            background: var(--bg-card);
+            border: 1px solid var(--brand-border);
+            border-radius: var(--radius-2xl);
+            padding: 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--brand), transparent);
+        }
+
+        .email-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .email-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 12px;
+            max-width: 440px;
+            margin: 0 auto 16px;
+        }
+
+        .email-input {
+            flex: 1;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-hover);
+            border-radius: var(--radius-full);
+            padding: 14px 20px;
+            font-family: inherit;
+            font-size: 0.92rem;
+            color: white;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .email-input::placeholder { color: var(--text-muted); }
+
+        .email-input:focus {
+            border-color: var(--brand-border-strong);
+            background: rgba(204,255,0,0.04);
+        }
+
+        .email-submit {
+            flex-shrink: 0;
+            background: var(--brand);
+            color: #000;
+            border: none;
+            border-radius: var(--radius-full);
+            padding: 14px 24px;
+            font-family: inherit;
+            font-size: 0.92rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .email-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--brand-glow);
+        }
+
+        .email-note {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .email-success {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .email-success.visible { display: flex; }
+
+        .email-success-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(204,255,0,0.15);
+            border: 2px solid var(--brand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .email-success-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--brand);
+        }
+
+        /* =============================================
+           FAQ
+        ============================================= */
+        .faq-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--brand-border), transparent);
+        }
+
+        .faq-categories {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+            justify-content: center;
+        }
+
+        .faq-cat {
+            padding: 8px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .faq-cat:hover, .faq-cat.active {
+            background: var(--brand);
+            color: #000;
+            border-color: var(--brand);
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover { border-color: var(--brand-border); }
+
+        .faq-item.active {
+            border-color: var(--brand-border);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 24px;
+            cursor: pointer;
+            gap: 16px;
+        }
+
+        .faq-question-text {
+            font-size: 0.97rem;
+            font-weight: 600;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .faq-toggle {
+            width: 32px;
+            height: 32px;
+            background: var(--brand-subtle);
+            border: 1px solid var(--brand-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .faq-item.active .faq-toggle {
+            background: var(--brand);
+            color: #000;
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 800px;
+            opacity: 1;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 24px;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        .faq-answer-inner p { margin-bottom: 10px; }
+        .faq-answer-inner p:last-child { margin-bottom: 0; }
+
+        .faq-answer-inner ul {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .faq-answer-inner li {
+            padding: 4px 0 4px 18px;
+            position: relative;
+        }
+
+        .faq-answer-inner li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--brand);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        .faq-highlight {
+            color: var(--brand);
+            font-weight: 600;
+        }
+
+        /* =============================================
+           CTA SECTION
+        ============================================= */
+        .cta-section {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-bg-orb {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(204,255,0,0.1) 0%, transparent 70%);
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        .cta-inner {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .cta-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 48px;
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cta-trust {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-trust-icon { font-size: 1rem; }
+
+        /* =============================================
+           FOOTER
+        ============================================= */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 64px 0 40px;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: white;
+            margin-bottom: 14px;
+        }
+
+        .footer-logo-badge {
+            width: 32px;
+            height: 32px;
+            background: var(--brand);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: 900;
+            color: #000;
+        }
+
+        .footer-brand p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+
+        .footer-store-badge img {
+            height: 40px;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-store-badge:hover img { opacity: 1; }
+
+        .footer-col h4 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover { color: var(--brand); }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-copyright {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .footer-legal a:hover { color: var(--brand); }
+
+        .footer-apple-note {
+            font-size: 0.72rem;
+            color: var(--text-disabled);
+            margin-top: 10px;
+        }
+
+        /* =============================================
+           SCROLL ANIMATIONS
+        ============================================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* =============================================
+           RESPONSIVE
+        ============================================= */
+        @media (max-width: 1100px) {
+            .hero-inner { gap: 40px; }
+            .iphone-frame { width: 240px; height: 495px; }
+            .hero-visual { padding: 0 100px; }
+            .float-card-1 { right: -95px; }
+            .float-card-2 { left: -95px; }
+            .float-card-3 { right: -95px; }
+            .float-badge { left: -75px; }
+            .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .bento-card.large { grid-column: span 12; }
+            .bento-card.medium-wide { grid-column: span 12; }
+            .bento-card.medium { grid-column: span 6; }
+            .bento-card.wide { grid-column: span 12; }
+            .bento-card.small { grid-column: span 6; }
+        }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .nav-cta .btn-ghost { display: none; }
+            .mobile-toggle { display: block; }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 60px;
+            }
+
+            .hero-subtitle { max-width: 100%; }
+            .hero-actions { justify-content: center; }
+            .hero-trust { justify-content: center; }
+
+            .hero-visual { height: 480px; padding: 0 60px; }
+            .iphone-frame { width: 220px; height: 455px; }
+
+            .float-card-1, .float-card-2, .float-card-3 {
+                display: none;
+            }
+            .float-badge { left: -50px; top: -10px; }
+
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-item + .stat-item::before { display: none; }
+
+            .showcase-inner { grid-template-columns: 1fr; gap: 40px; }
+            .showcase-inner.reverse { direction: ltr; }
+
+            .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+            .steps-grid::before { display: none; }
+
+            .testimonials-grid { grid-template-columns: 1fr; }
+
+            .pricing-preview-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .footer-inner { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+
+            .email-card { padding: 40px 24px; }
+            .email-form { flex-direction: column; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-title { font-size: 2.4rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-preview-grid { grid-template-columns: 1fr; }
+            .bento-card.medium, .bento-card.small { grid-column: span 12; }
+            .faq-categories { gap: 6px; }
+            .cta-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <div class="nav-wrapper" id="nav">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="nav-logo">
+                    <img src="bildmarke.svg" width="38" height="38" alt="TEAM WALLET X logo" style="flex-shrink:0;filter:invert(1);">
+                    TEAM WALLET X
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="features.html">Pricing</a></li>
+                    <li><a href="https://teamwalletx.store" target="_blank" rel="noopener">Shop</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="features.html" class="btn btn-ghost" style="padding:9px 18px; font-size:0.875rem;">See Pricing</a>
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="btn btn-primary" target="_blank" rel="noopener">Get the App</a>
+                </div>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <rect y="3" width="22" height="2" rx="1" fill="white"/>
+                        <rect y="10" width="22" height="2" rx="1" fill="white"/>
+                        <rect y="17" width="22" height="2" rx="1" fill="white"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <button class="mobile-menu-close" id="mobile-menu-close">×</button>
+        <a href="#features" onclick="closeMobileMenu()">Features</a>
+        <a href="features.html">Pricing</a>
+        <a href="https://teamwalletx.store" target="_blank" rel="noopener">Shop</a>
+        <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+        <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+        <div class="mobile-app-btn">
+            <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="btn btn-primary" target="_blank" rel="noopener" style="padding:14px 32px; font-size:1rem;">Get the App</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-dot-grid"></div>
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <div class="badge-pulse"></div>
+                        iOS 17+ &nbsp;·&nbsp; Free to Start &nbsp;·&nbsp; GDPR Compliant
+                    </div>
+
+                    <h1 class="hero-title">
+                        Manage Your<br>
+                        Sports Team<br>
+                        <span class="line-accent">Like Never Before</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        The all-in-one iOS platform for penalty tracking, equipment management, team finances, season management, and role-specific premium tools — built for champions.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="btn-app-store" target="_blank" rel="noopener">
+                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                        </a>
+                        <a href="#features" class="btn btn-ghost">
+                            Explore Features
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 3L13 8L8 13M3 8H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <span class="trust-icon">⭐</span>
+                            iOS 17.0+
+                        </div>
+                        <div class="trust-sep"></div>
+                        <div class="trust-item">
+                            <span class="trust-icon">🔒</span>
+                            GDPR Compliant
+                        </div>
+                        <div class="trust-sep"></div>
+                        <div class="trust-item">
+                            <span class="trust-icon">🚀</span>
+                            Free to Start
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="phone-wrapper">
+                        <!-- Floating badges -->
+                        <div class="float-badge">
+                            🏆 Achievement Unlocked!
+                        </div>
+
+                        <div class="float-card float-card-1">
+                            <div class="float-card-icon">📅</div>
+                            <div class="float-card-title">Training Tonight</div>
+                            <div class="float-card-sub">18:00 · Stadium A</div>
+                        </div>
+
+                        <div class="float-card float-card-2">
+                            <div class="float-card-icon">💰</div>
+                            <div class="float-card-title">Fine Collected</div>
+                            <div class="float-card-sub">€5.00 — Late arrival</div>
+                        </div>
+
+                        <div class="float-card float-card-3">
+                            <div class="float-card-icon">📦</div>
+                            <div class="float-card-title">Request Approved</div>
+                            <div class="float-card-sub">Jersey #7 — Size M</div>
+                        </div>
+
+                        <!-- iPhone Frame -->
+                        <div class="iphone-frame">
+                            <div class="iphone-dynamic-island"></div>
+                            <div class="iphone-screen">
+                                <div class="app-screen">
+                                    <div class="app-status-bar">
+                                        <span class="app-status-time">9:41</span>
+                                        <div class="app-status-icons">
+                                            <span>●●●●</span>
+                                            <span>WiFi</span>
+                                            <span>⬛</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="app-header">
+                                        <div class="app-header-greeting">Good morning, Captain</div>
+                                        <div class="app-header-title">TEAM <span>WALLET</span> X</div>
+                                    </div>
+
+                                    <div class="app-body">
+                                        <div class="app-stats-row">
+                                            <div class="app-stat-card">
+                                                <div class="app-stat-label">Rank</div>
+                                                <div class="app-stat-value">#2</div>
+                                            </div>
+                                            <div class="app-stat-card">
+                                                <div class="app-stat-label">Penalties</div>
+                                                <div class="app-stat-value white">€15</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="app-section-label">Leaderboard</div>
+
+                                        <div class="app-leaderboard">
+                                            <div class="app-lb-row">
+                                                <span class="app-lb-rank gold">1</span>
+                                                <div class="app-lb-avatar">M</div>
+                                                <span class="app-lb-name">Marcus K.</span>
+                                                <span class="app-lb-score green">0 pts</span>
+                                            </div>
+                                            <div class="app-lb-row highlighted">
+                                                <span class="app-lb-rank">2</span>
+                                                <div class="app-lb-avatar" style="background: linear-gradient(135deg, #fff,#ccc);">Y</div>
+                                                <span class="app-lb-name">You</span>
+                                                <span class="app-lb-score green">1 pt</span>
+                                            </div>
+                                            <div class="app-lb-row">
+                                                <span class="app-lb-rank">3</span>
+                                                <div class="app-lb-avatar" style="background: linear-gradient(135deg, #555,#333);">T</div>
+                                                <span class="app-lb-name">Tom B.</span>
+                                                <span class="app-lb-score">3 pts</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="app-section-label">Next Event</div>
+                                        <div class="mock-card" style="margin-bottom:0;">
+                                            <div class="mock-card-header">
+                                                <span class="mock-card-title">Training Session</span>
+                                                <span class="mock-badge green">TODAY</span>
+                                            </div>
+                                            <div class="mock-card-body">18:00 · Stadion A, Vienna</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="app-tab-bar">
+                                        <div class="app-tab active">
+                                            <div class="app-tab-icon">🏠</div>
+                                            <div class="app-tab-label">Home</div>
+                                        </div>
+                                        <div class="app-tab">
+                                            <div class="app-tab-icon">💰</div>
+                                            <div class="app-tab-label">Balance</div>
+                                        </div>
+                                        <div class="app-tab">
+                                            <div class="app-tab-icon">📅</div>
+                                            <div class="app-tab-label">Calendar</div>
+                                        </div>
+                                        <div class="app-tab">
+                                            <div class="app-tab-icon">👥</div>
+                                            <div class="app-tab-label">Team</div>
+                                        </div>
+                                        <div class="app-tab">
+                                            <div class="app-tab-icon">👤</div>
+                                            <div class="app-tab-label">Profile</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="10" data-suffix="+">0</div>
+                    <div class="stat-label">Role Feature Hubs</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-1">
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-label">Supported Team Roles</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-2">
+                    <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                    <div class="stat-label">GDPR Compliant</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-3">
+                    <div class="stat-number" data-suffix="/7">24</div>
+                    <div class="stat-label">Real-Time Sync</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES GRID -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-badge">✦ Features</div>
+                <h2 class="section-title">Everything your team needs,<br>in one powerful app</h2>
+                <p class="section-subtitle">From penalty fines to equipment inventory — TEAM WALLET X replaces the spreadsheets, WhatsApp chaos, and manual admin work your team has been living with.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Large Card: Penalty Tracking -->
+                <div class="bento-card large reveal">
+                    <div class="bento-icon">⚖️</div>
+                    <div class="bento-tag">Core Feature</div>
+                    <h3 class="bento-title">Automated Penalty Tracking</h3>
+                    <p class="bento-desc">Assign fines, track payments, and generate financial reports automatically. Custom penalty categories, payment reminders, and complete audit trails — built for teams that take accountability seriously.</p>
+                    <div class="bento-mini-list">
+                        <div class="bento-mini-item">
+                            <div class="bento-mini-dot"></div>
+                            Custom categories (late arrival, missed training, yellow card...)
+                        </div>
+                        <div class="bento-mini-item">
+                            <div class="bento-mini-dot"></div>
+                            Automated payment reminders
+                        </div>
+                        <div class="bento-mini-item">
+                            <div class="bento-mini-dot"></div>
+                            Coach assigns · Admin confirms payment
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium Wide: Equipment Management -->
+                <div class="bento-card medium-wide reveal reveal-delay-1">
+                    <div style="display:flex; gap:16px; align-items:flex-start;">
+                        <div class="bento-icon" style="flex-shrink:0;">📦</div>
+                        <div>
+                            <div class="bento-tag">New in 2025</div>
+                            <h3 class="bento-title">Equipment & Inventory Management</h3>
+                            <p class="bento-desc">Full inventory system with photo tracking, player assignments, request workflows, and AI-powered item scanner. From purchase to retirement, every item accounted for.</p>
+                            <div class="bento-stat-row">
+                                <div class="bento-stat">
+                                    <div class="bento-stat-val">100%</div>
+                                    <div class="bento-stat-name">Utilization Rate</div>
+                                </div>
+                                <div class="bento-stat">
+                                    <div class="bento-stat-val">Real-Time</div>
+                                    <div class="bento-stat-name">Tracking</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium: Gamification -->
+                <div class="bento-card medium reveal">
+                    <div class="bento-icon">🏆</div>
+                    <h3 class="bento-title">Gamification & Leaderboards</h3>
+                    <p class="bento-desc">Achievements, badges, clean sheet tracking, and leaderboards. Turn team management into motivation.</p>
+                </div>
+
+                <!-- Medium: Analytics -->
+                <div class="bento-card medium reveal reveal-delay-1">
+                    <div class="bento-icon">📊</div>
+                    <h3 class="bento-title">Analytics & Reports</h3>
+                    <p class="bento-desc">Deep insights into team performance, penalty trends, financial health, and player statistics with exportable PDF/CSV reports.</p>
+                </div>
+
+                <!-- Medium: Player Management -->
+                <div class="bento-card medium reveal reveal-delay-2">
+                    <div class="bento-icon">👥</div>
+                    <h3 class="bento-title">Player Management</h3>
+                    <p class="bento-desc">Comprehensive player rosters, role-based permissions, and team coordination tools for seamless management at any scale.</p>
+                </div>
+
+                <!-- Wide: Communication -->
+                <div class="bento-card wide reveal">
+                    <div style="display:flex; gap:24px; align-items:flex-start;">
+                        <div class="bento-icon" style="flex-shrink:0;">📢</div>
+                        <div style="flex:1;">
+                            <div class="bento-tag">Stay Connected</div>
+                            <h3 class="bento-title">Team Communication Hub</h3>
+                            <p class="bento-desc">Priority announcements (Normal / Important / Urgent), team votings with real-time results, and integrated team chat — all in one place, with read receipts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small: Calendar -->
+                <div class="bento-card small reveal reveal-delay-1">
+                    <div class="bento-icon">📅</div>
+                    <h3 class="bento-title">Smart Calendar</h3>
+                    <p class="bento-desc">Training, matches, and team events with automated reminders and attendance tracking.</p>
+                </div>
+
+                <!-- Small: Financial -->
+                <div class="bento-card small reveal reveal-delay-2">
+                    <div class="bento-icon">💳</div>
+                    <h3 class="bento-title">Financial Management</h3>
+                    <p class="bento-desc">Team budgets, transactions, PayPal Me integration, and complete financial reports — Admin controlled.</p>
+                </div>
+
+                <!-- Small: Privacy -->
+                <div class="bento-card small reveal reveal-delay-3">
+                    <div class="bento-icon">🔒</div>
+                    <h3 class="bento-title">Privacy & Security</h3>
+                    <p class="bento-desc">Biometric auth, end-to-end encryption, GDPR compliance, and granular role-based access controls.</p>
+                </div>
+
+                <!-- Wide: Role Feature Hubs (NEW) -->
+                <div class="bento-card wide reveal">
+                    <div style="display:flex; gap:24px; align-items:flex-start;">
+                        <div class="bento-icon" style="flex-shrink:0;">🎭</div>
+                        <div style="flex:1;">
+                            <div class="bento-tag">Premium · New</div>
+                            <h3 class="bento-title">Role-Specific Premium Feature Hubs</h3>
+                            <p class="bento-desc">Each of the 10 supported team roles unlocks a dedicated feature hub — exclusively yours as a premium subscriber. Coaches get Lineup Builder &amp; Training Attendance. Physios get an Injury Tracker. Nutritionists get Meal Plan templates. Every role, purpose-built tools.</p>
+                            <div class="bento-mini-list" style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px 14px;">
+                                <div class="bento-mini-item">🏋️ Admin → Budget Planner</div>
+                                <div class="bento-mini-item">⚽ Player → Personal Goals</div>
+                                <div class="bento-mini-item">📋 Coach → Lineup Builder</div>
+                                <div class="bento-mini-item">🩺 Physio → Injury Tracker</div>
+                                <div class="bento-mini-item">👕 Kit Manager → Checklists &amp; AI Insights</div>
+                                <div class="bento-mini-item">📊 Analyst → Match Event Logs</div>
+                                <div class="bento-mini-item">🥗 Nutritionist → Meal Plans</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium: Season Management (NEW) -->
+                <div class="bento-card medium reveal reveal-delay-1">
+                    <div class="bento-icon">🗓️</div>
+                    <div class="bento-tag">New Feature</div>
+                    <h3 class="bento-title">Season Management</h3>
+                    <p class="bento-desc">Close a season, roll everything over to the next, or browse past seasons as read-only archives. Admins control what carries forward — balances, equipment, rosters, and more.</p>
+                </div>
+
+                <!-- Medium: Calendar Carousel (NEW) -->
+                <div class="bento-card medium reveal reveal-delay-2">
+                    <div class="bento-icon">📍</div>
+                    <h3 class="bento-title">Interactive Event Carousel</h3>
+                    <p class="bento-desc">Home tab scrollable carousel always snaps to your next upcoming event, with past events dimmed on the left and future ones ready to the right — at a glance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOWCASE: Equipment -->
+    <section class="showcase-section" style="padding-top:80px;">
+        <div class="container">
+            <div class="showcase-inner">
+                <div class="showcase-text reveal">
+                    <div class="section-badge">📦 New Feature</div>
+                    <h2 class="showcase-title">Complete Equipment &<br>Inventory Management</h2>
+                    <p class="showcase-desc">Transform how your team manages gear. Every jersey, ball, and item tracked from purchase to retirement — with full assignment history, request workflows, and issue reporting.</p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">📋</div>
+                            <div>
+                                <div class="sf-title">Full Inventory Tracking</div>
+                                <div class="sf-desc">Photos, sizes, conditions, locations, and purchase info. Complete lifecycle management with the built-in AI item scanner.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">👤</div>
+                            <div>
+                                <div class="sf-title">Player Assignments</div>
+                                <div class="sf-desc">Assign equipment with due dates, track returns, assess damage, and manage late return fees automatically.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">📝</div>
+                            <div>
+                                <div class="sf-title">Request Management</div>
+                                <div class="sf-desc">Players request equipment with size and priority. Staff approve or deny with notes and track fulfillment in real-time.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">🔧</div>
+                            <div>
+                                <div class="sf-title">Issue Reporting</div>
+                                <div class="sf-desc">Report damaged, lost, or defective equipment with severity levels (Critical / High / Medium / Low) and resolution tracking.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-visual reveal reveal-delay-1">
+                    <div class="showcase-visual-inner">
+                        <div style="text-align:center; margin-bottom:24px;">
+                            <div style="font-size:2.5rem; margin-bottom:8px;">📦</div>
+                            <div style="font-size:1rem; font-weight:700; color:var(--brand);">Inventory Dashboard</div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">Jersey #7 — FC Vienna</span>
+                                <span class="mock-badge green">Assigned</span>
+                            </div>
+                            <div class="mock-card-body">Assigned to: Marcus K. · Size M · Return: 31 May</div>
+                            <div class="mock-progress-bar"><div class="mock-progress-fill" style="width:70%"></div></div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">Training Cones × 20</span>
+                                <span class="mock-badge green">Available</span>
+                            </div>
+                            <div class="mock-card-body">Location: Equipment Room A · Condition: Good</div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">Goalkeeper Gloves</span>
+                                <span class="mock-badge red">Issue Reported</span>
+                            </div>
+                            <div class="mock-card-body">Damaged — Severity: Medium · Under review</div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">Equipment Request</span>
+                                <span class="mock-badge amber">Pending</span>
+                            </div>
+                            <div class="mock-card-body">Tom B. requests: Jersey Size L · Priority: High</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOWCASE: Communication -->
+    <section class="showcase-section">
+        <div class="container">
+            <div class="showcase-inner reverse">
+                <div class="showcase-text reveal">
+                    <div class="section-badge">💬 Stay Connected</div>
+                    <h2 class="showcase-title">Powerful Team<br>Communication</h2>
+                    <p class="showcase-desc">Keep every player, coach, and admin perfectly informed. From urgent match-day announcements to casual team polls — everything in one unified hub.</p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">📣</div>
+                            <div>
+                                <div class="sf-title">Priority Announcements</div>
+                                <div class="sf-desc">Normal, Important, or Urgent priority levels. Read receipts so you know every message lands.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">🗳️</div>
+                            <div>
+                                <div class="sf-title">Team Votings</div>
+                                <div class="sf-desc">Create polls for democratic team decisions. Multiple options, deadline tracking, and real-time results.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">💬</div>
+                            <div>
+                                <div class="sf-title">Integrated Team Chat</div>
+                                <div class="sf-desc">Real-time messaging for seamless team coordination. Premium feature available from Player tier and above.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-visual reveal reveal-delay-1">
+                    <div class="showcase-visual-inner">
+                        <div style="font-size:1rem; font-weight:700; color:var(--brand); margin-bottom:20px; text-align:center;">Communication Hub</div>
+                        <div class="mock-card">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">📣 Match Tomorrow!</span>
+                                <span class="mock-badge red">URGENT</span>
+                            </div>
+                            <div class="mock-card-body">Kick-off 15:00 · Graz Arena · Full squad required · Kit check 13:30</div>
+                            <div style="margin-top:8px; font-size:0.68rem; color:var(--text-muted);">Read by 18/22 players</div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">🗳️ Away Kit Poll</span>
+                                <span class="mock-badge amber">OPEN</span>
+                            </div>
+                            <div class="mock-card-body">Which away kit design do you prefer?</div>
+                            <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px;">
+                                <div style="font-size:0.7rem; color:white;">Option A — Classic White<div class="mock-progress-bar" style="margin-top:3px;"><div class="mock-progress-fill" style="width:65%"></div></div></div>
+                                <div style="font-size:0.7rem; color:rgba(255,255,255,0.6);">Option B — Navy Blue<div class="mock-progress-bar" style="margin-top:3px;"><div class="mock-progress-fill" style="width:35%; background:rgba(255,255,255,0.3)"></div></div></div>
+                            </div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">💬 Team Chat</span>
+                                <span class="mock-badge green">LIVE</span>
+                            </div>
+                            <div style="font-size:0.72rem; color:rgba(255,255,255,0.5); padding:6px 0;">
+                                <div style="margin-bottom:4px;"><span style="color:var(--brand)">Coach:</span> Great training today!</div>
+                                <div style="margin-bottom:4px;"><span style="color:rgba(255,255,255,0.7)">Marcus:</span> Ready for Saturday 💪</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOWCASE: Calendar -->
+    <section class="showcase-section">
+        <div class="container">
+            <div class="showcase-inner">
+                <div class="showcase-text reveal">
+                    <div class="section-badge">📅 Organization</div>
+                    <h2 class="showcase-title">Smart Calendar &<br>Event Management</h2>
+                    <p class="showcase-desc">Never miss a training session or match again. An intelligent scheduling system that keeps your entire team synchronized — with automated reminders, attendance tracking, and direct links to coach tools like the Lineup Builder.</p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">📆</div>
+                            <div>
+                                <div class="sf-title">Event Creation & Management</div>
+                                <div class="sf-desc">Create training sessions, matches, and team events with location, time, and full details. Staff and coaches manage the schedule.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">🔔</div>
+                            <div>
+                                <div class="sf-title">Automated Reminders</div>
+                                <div class="sf-desc">Smart push notifications remind players before every event. Configurable reminder times ensure nobody misses a match.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">✅</div>
+                            <div>
+                                <div class="sf-title">Linked Training Attendance</div>
+                                <div class="sf-desc">Coaches log attendance directly from a training calendar event. Past-event sessions are automatically hidden so duplicate tracking is impossible.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">⚽</div>
+                            <div>
+                                <div class="sf-title">Lineup Builder in Match Events</div>
+                                <div class="sf-desc">Open any match in the calendar and see the coach's saved lineup right there — or create one on the spot, linked directly to that game.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-visual reveal reveal-delay-1">
+                    <div class="showcase-visual-inner">
+                        <div style="font-size:1rem; font-weight:700; color:var(--brand); margin-bottom:20px; text-align:center;">Team Schedule</div>
+                        <div class="mock-card" style="border-left: 3px solid var(--brand); border-radius: 0 12px 12px 0;">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">Training Session</span>
+                                <span class="mock-badge green">TODAY</span>
+                            </div>
+                            <div class="mock-card-body">18:00 – 20:00 · Stadium A, Vienna<br>Attendance: 18/22 confirmed ✅</div>
+                        </div>
+                        <div class="mock-card" style="border-left: 3px solid rgba(255,255,255,0.2); border-radius: 0 12px 12px 0;">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">Team Meeting</span>
+                                <span class="mock-badge amber">TOMORROW</span>
+                            </div>
+                            <div class="mock-card-body">19:00 · Club House · All roles required</div>
+                        </div>
+                        <div class="mock-card" style="border-left: 3px solid rgba(255,255,255,0.2); border-radius: 0 12px 12px 0;">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">Away Match</span>
+                                <span class="mock-badge amber">SATURDAY</span>
+                            </div>
+                            <div class="mock-card-body">15:00 · Graz Arena · Kit pickup 13:00</div>
+                        </div>
+                        <div style="margin-top:12px; padding:10px; background:rgba(204,255,0,0.06); border-radius:10px; border:1px solid rgba(204,255,0,0.15);">
+                            <div style="font-size:0.72rem; color:var(--brand); font-weight:600;">🔔 Reminder set: 2 hours before each event</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOWCASE: Role Feature Hubs (NEW) -->
+    <section class="showcase-section">
+        <div class="container">
+            <div class="showcase-inner">
+                <div class="showcase-text reveal">
+                    <div class="section-badge">🎭 Premium · Roles</div>
+                    <h2 class="showcase-title">Dedicated Feature Hubs<br>for Every Role</h2>
+                    <p class="showcase-desc">Each team member's role unlocks a personalised premium hub — purpose-built tools designed for how they actually work. 10 roles, 10 unique hubs. Locked roles show a preview so teammates know what to unlock.</p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">📋</div>
+                            <div>
+                                <div class="sf-title">Coach — Lineup Builder</div>
+                                <div class="sf-desc">Drag players onto a tactical pitch with jersey numbers shown. Assign 6 bench spots. Link lineups to upcoming calendar matches for a two-way view.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">✅</div>
+                            <div>
+                                <div class="sf-title">Coach — Training Attendance</div>
+                                <div class="sf-desc">Log who showed up to a training, link sessions to calendar events, tap "Select All" for quick full-squad marking, and delete or edit past sessions.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">🩺</div>
+                            <div>
+                                <div class="sf-title">Physio & Doctor — Medical Tools</div>
+                                <div class="sf-desc">Injury tracker with severity levels and recovery timelines; Allergy & Condition Registry with per-player medical notes — private and secure.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">👕</div>
+                            <div>
+                                <div class="sf-title">Kit Manager — Full Equipment Hub</div>
+                                <div class="sf-desc">Pre-match checklists, AI inventory insights, custom equipment categories, kit assignments, and request management — all in one dedicated hub.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">📊</div>
+                            <div>
+                                <div class="sf-title">Analyst, Nutritionist & More</div>
+                                <div class="sf-desc">Match Event Logs for analysts, Meal Plan templates for nutritionists, Contract lists for managers, Player Focus Notes for assistant coaches — purpose-built for every role.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-visual reveal reveal-delay-1">
+                    <div class="showcase-visual-inner">
+                        <div style="font-size:1rem; font-weight:700; color:var(--brand); margin-bottom:20px; text-align:center;">Role Feature Cards</div>
+
+                        <!-- Role card: Coach -->
+                        <div class="mock-card" style="border-left: 3px solid #FF6B35; border-radius:0 12px 12px 0;">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title" style="color:#FF6B35;">🏋️ Coach</span>
+                                <span class="mock-badge green">UNLOCKED</span>
+                            </div>
+                            <div style="font-size:0.7rem; color:rgba(255,255,255,0.6); margin-top:6px; display:flex; flex-direction:column; gap:3px;">
+                                <div style="color:#FF6B35;">📋 Lineup Builder</div>
+                                <div style="color:#FF6B35;">✅ Training Attendance</div>
+                            </div>
+                        </div>
+
+                        <!-- Role card: Kit Manager -->
+                        <div class="mock-card" style="border-left: 3px solid #F5A623; border-radius:0 12px 12px 0;">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title" style="color:#F5A623;">👕 Kit Manager</span>
+                                <span class="mock-badge green">UNLOCKED</span>
+                            </div>
+                            <div style="font-size:0.7rem; margin-top:6px; display:flex; flex-direction:column; gap:3px;">
+                                <div style="color:#F5A623;">📝 Pre-Match Checklists</div>
+                                <div style="color:#F5A623;">💡 AI Inventory Insights</div>
+                            </div>
+                        </div>
+
+                        <!-- Role card: Player (locked) -->
+                        <div class="mock-card" style="border-left: 3px solid rgba(255,255,255,0.15); border-radius:0 12px 12px 0; opacity:0.55;">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">⚽ Player</span>
+                                <span class="mock-badge" style="background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.4); border:1px solid rgba(255,255,255,0.1);">🔒 LOCKED</span>
+                            </div>
+                            <div style="font-size:0.7rem; color:rgba(255,255,255,0.35); margin-top:6px;">Not your role · Subscribe to unlock</div>
+                        </div>
+
+                        <div style="margin-top:12px; padding:10px; background:rgba(204,255,0,0.06); border-radius:10px; border:1px solid rgba(204,255,0,0.15);">
+                            <div style="font-size:0.72rem; color:var(--brand); font-weight:600;">✦ Premium required to access role hubs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOWCASE: Lineup Builder (NEW) -->
+    <section class="showcase-section">
+        <div class="container">
+            <div class="showcase-inner reverse">
+                <div class="showcase-text reveal">
+                    <div class="section-badge">⚽ Coach · Premium</div>
+                    <h2 class="showcase-title">Tactical Lineup Builder<br>for Coaches</h2>
+                    <p class="showcase-desc">Plan your formation before every match. Assign players to pitch positions — their jersey number in the circle, name written below. Fill 6 bench spots. Save it as a standalone lineup or link it directly to a calendar match event.</p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">🗺️</div>
+                            <div>
+                                <div class="sf-title">Visual Pitch View</div>
+                                <div class="sf-desc">Choose a formation and tap any slot on the pitch to assign a player. Jersey number and first name shown on the pitch — clean and tactical.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">🪑</div>
+                            <div>
+                                <div class="sf-title">6 Bench Spots</div>
+                                <div class="sf-desc">Allocate substitutes to dedicated bench slots. Players already assigned to a pitch slot are hidden from other pickers, but available if you want to swap them.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">🔗</div>
+                            <div>
+                                <div class="sf-title">Calendar-Linked Lineups</div>
+                                <div class="sf-desc">Link a lineup to an upcoming match in your team calendar. The lineup then appears inside that event's detail view — visible to the whole team.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-visual reveal reveal-delay-1">
+                    <div class="showcase-visual-inner">
+                        <div style="font-size:1rem; font-weight:700; color:var(--brand); margin-bottom:16px; text-align:center;">Lineup Builder</div>
+
+                        <!-- Pitch mockup -->
+                        <div style="background: linear-gradient(180deg, #1a4a1a 0%, #2d6b2d 50%, #1a4a1a 100%); border-radius:12px; padding:16px; border:1px solid rgba(255,255,255,0.1); position:relative; min-height:160px;">
+                            <!-- Formation label -->
+                            <div style="text-align:center; font-size:0.65rem; color:rgba(255,255,255,0.5); margin-bottom:10px;">4-3-3 Formation</div>
+                            <!-- Pitch positions row mockup -->
+                            <div style="display:flex; justify-content:center; gap:8px; margin-bottom:8px;">
+                                <div style="text-align:center;">
+                                    <div style="width:32px; height:32px; border-radius:50%; background:var(--brand); color:#000; font-size:0.65rem; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto;">9</div>
+                                    <div style="font-size:0.55rem; color:rgba(255,255,255,0.7); margin-top:2px;">Marcus</div>
+                                </div>
+                                <div style="text-align:center;">
+                                    <div style="width:32px; height:32px; border-radius:50%; background:var(--brand); color:#000; font-size:0.65rem; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto;">11</div>
+                                    <div style="font-size:0.55rem; color:rgba(255,255,255,0.7); margin-top:2px;">Tom</div>
+                                </div>
+                                <div style="text-align:center;">
+                                    <div style="width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,0.15); border:1px dashed rgba(255,255,255,0.3); color:rgba(255,255,255,0.4); font-size:0.65rem; display:flex; align-items:center; justify-content:center; margin:0 auto;">+</div>
+                                    <div style="font-size:0.55rem; color:rgba(255,255,255,0.3); margin-top:2px;">Empty</div>
+                                </div>
+                            </div>
+                            <div style="display:flex; justify-content:center; gap:8px; margin-bottom:8px;">
+                                <div style="text-align:center;"><div style="width:28px; height:28px; border-radius:50%; background:var(--brand); color:#000; font-size:0.6rem; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto;">8</div><div style="font-size:0.5rem; color:rgba(255,255,255,0.7); margin-top:2px;">Lars</div></div>
+                                <div style="text-align:center;"><div style="width:28px; height:28px; border-radius:50%; background:var(--brand); color:#000; font-size:0.6rem; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto;">6</div><div style="font-size:0.5rem; color:rgba(255,255,255,0.7); margin-top:2px;">David</div></div>
+                                <div style="text-align:center;"><div style="width:28px; height:28px; border-radius:50%; background:var(--brand); color:#000; font-size:0.6rem; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto;">10</div><div style="font-size:0.5rem; color:rgba(255,255,255,0.7); margin-top:2px;">Alex</div></div>
+                            </div>
+                            <div style="display:flex; justify-content:center; gap:6px;">
+                                <div style="text-align:center;"><div style="width:24px; height:24px; border-radius:50%; background:rgba(204,255,0,0.5); color:#000; font-size:0.55rem; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto;">2</div></div>
+                                <div style="text-align:center;"><div style="width:24px; height:24px; border-radius:50%; background:rgba(204,255,0,0.5); color:#000; font-size:0.55rem; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto;">5</div></div>
+                                <div style="text-align:center;"><div style="width:24px; height:24px; border-radius:50%; background:rgba(204,255,0,0.5); color:#000; font-size:0.55rem; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto;">4</div></div>
+                                <div style="text-align:center;"><div style="width:24px; height:24px; border-radius:50%; background:rgba(204,255,0,0.5); color:#000; font-size:0.55rem; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto;">3</div></div>
+                            </div>
+                        </div>
+
+                        <!-- Bench -->
+                        <div style="margin-top:10px; background:rgba(255,255,255,0.04); border-radius:10px; padding:8px 12px; border:1px solid rgba(255,255,255,0.08);">
+                            <div style="font-size:0.65rem; color:rgba(255,255,255,0.4); margin-bottom:6px; font-weight:600;">BENCH (6 spots)</div>
+                            <div style="display:flex; gap:6px;">
+                                <div style="width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px dashed rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:0.6rem; color:rgba(255,255,255,0.3);">+</div>
+                                <div style="width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px dashed rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:0.6rem; color:rgba(255,255,255,0.3);">+</div>
+                                <div style="width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px dashed rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:0.6rem; color:rgba(255,255,255,0.3);">+</div>
+                                <div style="width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px dashed rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:0.6rem; color:rgba(255,255,255,0.3);">+</div>
+                                <div style="width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px dashed rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:0.6rem; color:rgba(255,255,255,0.3);">+</div>
+                                <div style="width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px dashed rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:0.6rem; color:rgba(255,255,255,0.3);">+</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top:10px; padding:8px 12px; background:rgba(204,255,0,0.06); border-radius:10px; border:1px solid rgba(204,255,0,0.15);">
+                            <div style="font-size:0.7rem; color:var(--brand); font-weight:600;">🔗 Linked to: Away Match vs. Graz FC</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOWCASE: Season Management (NEW) -->
+    <section class="showcase-section">
+        <div class="container">
+            <div class="showcase-inner">
+                <div class="showcase-text reveal">
+                    <div class="section-badge">🗓️ Admin · New Feature</div>
+                    <h2 class="showcase-title">Full Season<br>Management</h2>
+                    <p class="showcase-desc">Open a new season when summer arrives, archive the old one, and choose exactly what carries over. Rosters, wallet balances, equipment assignments, and past statistics — all preserved and always accessible as read-only archives (Premium).</p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">🧙</div>
+                            <div>
+                                <div class="sf-title">Close Season Wizard</div>
+                                <div class="sf-desc">A guided multi-step wizard walks the admin through rolling over members, deciding on wallet balances, carrying over equipment, and archiving old data — nothing is lost.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">📁</div>
+                            <div>
+                                <div class="sf-title">Season Archives (Premium)</div>
+                                <div class="sf-desc">Browse past seasons in full read-only mode. View penalties, finances, and stats exactly as they were — a complete history of your team's journey.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">🏆</div>
+                            <div>
+                                <div class="sf-title">Season Champion Badge</div>
+                                <div class="sf-desc">When a season closes, the top-ranked player earns a permanent Season Champion badge — a lasting mark on your team's Hall of Fame.</div>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="sf-icon-wrap">📊</div>
+                            <div>
+                                <div class="sf-title">All Data Reflects Current Season</div>
+                                <div class="sf-desc">Every tab — penalties, finances, equipment, calendar — automatically reflects the season you have selected. Switch freely between seasons with a single tap.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-visual reveal reveal-delay-1">
+                    <div class="showcase-visual-inner">
+                        <div style="font-size:1rem; font-weight:700; color:var(--brand); margin-bottom:20px; text-align:center;">Season Management</div>
+
+                        <div class="mock-card" style="border-left: 3px solid var(--brand); border-radius: 0 12px 12px 0;">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">Season 2024/25</span>
+                                <span class="mock-badge green">ACTIVE</span>
+                            </div>
+                            <div class="mock-card-body">Started: Aug 2024 · 22 members rolled over</div>
+                        </div>
+
+                        <div class="mock-card" style="border-left: 3px solid rgba(255,255,255,0.15); border-radius: 0 12px 12px 0; opacity:0.65;">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">Season 2023/24</span>
+                                <span class="mock-badge" style="background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.1);">ARCHIVED</span>
+                            </div>
+                            <div class="mock-card-body">Read-only · 34 penalties · €420 collected</div>
+                        </div>
+
+                        <div class="mock-card">
+                            <div class="mock-card-header">
+                                <span class="mock-card-title">Close Season Wizard</span>
+                                <span class="mock-badge amber">STEP 2/5</span>
+                            </div>
+                            <div style="margin-top:8px;">
+                                <div style="font-size:0.68rem; color:rgba(255,255,255,0.6); margin-bottom:6px;">Carry over wallet balances?</div>
+                                <div style="display:flex; gap:8px;">
+                                    <div style="padding:4px 10px; background:var(--brand); color:#000; border-radius:6px; font-size:0.65rem; font-weight:700;">Yes — opening entry</div>
+                                    <div style="padding:4px 10px; background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.5); border-radius:6px; font-size:0.65rem;">Start at €0</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top:12px; padding:10px; background:rgba(204,255,0,0.06); border-radius:10px; border:1px solid rgba(204,255,0,0.15);">
+                            <div style="font-size:0.72rem; color:var(--brand); font-weight:600;">🏆 Season Champion: Marcus K. — 2023/24</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="section-badge">⚡ Simple Setup</div>
+                <h2 class="section-title">Up and running in minutes</h2>
+                <p class="section-subtitle">Getting your team onto TEAM WALLET X is effortless. No complicated onboarding, no IT team required.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card reveal">
+                    <div class="step-num">1</div>
+                    <h3 class="step-title">Download & Create</h3>
+                    <p class="step-desc">Download TEAM WALLET X from the App Store and create your team profile in under 2 minutes. Requires iOS 17.0 or later.</p>
+                </div>
+                <div class="step-card reveal reveal-delay-1">
+                    <div class="step-num">2</div>
+                    <h3 class="step-title">Invite & Assign Roles</h3>
+                    <p class="step-desc">Share your team code with players, staff, and coaches. Assign role-based subscriptions — everyone gets exactly the access they need.</p>
+                </div>
+                <div class="step-card reveal reveal-delay-2">
+                    <div class="step-num">3</div>
+                    <h3 class="step-title">Manage Everything</h3>
+                    <p class="step-desc">Track penalties, manage equipment, schedule events, and analyze performance — all from your iPhone. Your team, fully organized.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="section-badge">💬 Team Stories</div>
+                <h2 class="section-title">Loved by teams<br>across Europe</h2>
+                <p class="section-subtitle">Coaches, admins, and players all use TEAM WALLET X to run their teams better.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                    </div>
+                    <p class="testimonial-quote">"TEAM WALLET X completely replaced our messy spreadsheets and group chats. Penalty tracking used to take hours each week — now it's automatic. Our players actually pay on time!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="author-name">Marcus H.</div>
+                            <div class="author-role">Head Coach · FC Vienna Amateur</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-stars">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                    </div>
+                    <p class="testimonial-quote">"The equipment inventory system alone is worth every cent. We track every jersey, ball, and cone in real-time. No more lost gear, no more awkward 'who has what' conversations."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #66CC00, #338800);">L</div>
+                        <div>
+                            <div class="author-name">Lisa B.</div>
+                            <div class="author-role">Team Admin · Graz Basketball Club</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="testimonial-stars">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                    </div>
+                    <p class="testimonial-quote">"As a player, the achievements and leaderboard keep me genuinely motivated. Seeing my clean sheet streak growing is addictive. Even the penalty system feels fair and transparent now."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #888, #555);">T</div>
+                        <div>
+                            <div class="author-name">Tobias W.</div>
+                            <div class="author-role">Player · Salzburg United FC</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING PREVIEW -->
+    <section class="pricing-preview-section" id="pricing">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="section-badge">💎 Pricing</div>
+                <h2 class="section-title">Role-based plans.<br>Pay only for what you need.</h2>
+                <p class="section-subtitle">5 tiers including the new <strong style="color:var(--brand);">TEAM plan</strong> — one admin pays, everyone gets premium. Every plan unlocks features tailored to your role in the team.</p>
+            </div>
+
+            <div class="pricing-preview-grid">
+                <!-- Player -->
+                <div class="plan-card reveal">
+                    <div class="plan-icon">⚽</div>
+                    <div class="plan-name">Player</div>
+                    <div class="plan-desc">Perfect for team members</div>
+                    <div class="plan-price"><sup>€</sup>1.99</div>
+                    <div class="plan-period">per month</div>
+                    <div class="plan-features">
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Personal achievements & badges</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Detailed personal statistics</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Clean sheet tracking & leaderboard</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Team chat access</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Personal Goals tracker (role hub)</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Past season archives</div>
+                    </div>
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="plan-btn" target="_blank" rel="noopener">Get Started</a>
+                </div>
+
+                <!-- Staff -->
+                <div class="plan-card reveal reveal-delay-1">
+                    <div class="plan-icon">👥</div>
+                    <div class="plan-name">Staff</div>
+                    <div class="plan-desc">For support staff & specialists</div>
+                    <div class="plan-price"><sup>€</sup>3.99</div>
+                    <div class="plan-period">per month</div>
+                    <div class="plan-features">
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>All Player features</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Team analytics dashboard</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Calendar event management</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Equipment inventory access</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Role-specific feature hub (Physio, Kit Manager, Analyst…)</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>6-month history</div>
+                    </div>
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="plan-btn" target="_blank" rel="noopener">Get Started</a>
+                </div>
+
+                <!-- Coach (Featured) -->
+                <div class="plan-card featured reveal reveal-delay-2">
+                    <div class="plan-popular-tag">⭐ Most Popular</div>
+                    <div class="plan-body">
+                        <div class="plan-icon">🏆</div>
+                        <div class="plan-name">Coach</div>
+                        <div class="plan-desc">Advanced team management</div>
+                        <div class="plan-price"><sup>€</sup>5.99</div>
+                        <div class="plan-period">per month</div>
+                        <div class="plan-features">
+                            <div class="plan-feature-item"><span class="plan-check">✓</span>All Staff features</div>
+                            <div class="plan-feature-item"><span class="plan-check">✓</span>Unlimited team size</div>
+                            <div class="plan-feature-item"><span class="plan-check">✓</span>Create & assign penalties</div>
+                            <div class="plan-feature-item"><span class="plan-check">✓</span>Lineup Builder (linked to matches)</div>
+                            <div class="plan-feature-item"><span class="plan-check">✓</span>Training Attendance logging</div>
+                            <div class="plan-feature-item"><span class="plan-check">✓</span>1-year history access</div>
+                        </div>
+                        <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="plan-btn" target="_blank" rel="noopener">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Admin -->
+                <div class="plan-card reveal reveal-delay-3">
+                    <div class="plan-icon">👑</div>
+                    <div class="plan-name">Admin</div>
+                    <div class="plan-desc">Complete system control</div>
+                    <div class="plan-price"><sup>€</sup>7.99</div>
+                    <div class="plan-period">per month</div>
+                    <div class="plan-features">
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>All Coach features</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Budget Planner (role hub)</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Full financial management</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Season management & archives</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>All data export types</div>
+                        <div class="plan-feature-item"><span class="plan-check">✓</span>Priority support</div>
+                    </div>
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="plan-btn" target="_blank" rel="noopener">Get Started</a>
+                </div>
+            </div>
+
+            <!-- TEAM Plan -->
+            <div class="plan-team-row reveal">
+                <div class="plan-card team-plan">
+                    <div class="tp-left">
+                        <div class="tp-badge">🏟️ Best Value · Team Plan</div>
+                        <div class="tp-name">TEAM</div>
+                        <div class="tp-sub">Admin pays once — entire team gets premium</div>
+                    </div>
+
+                    <div class="tp-center">
+                        <div class="tp-feat"><span class="tc">✓</span>Full premium access for every team member</div>
+                        <div class="tp-feat"><span class="tc">✓</span>Up to 50 members under one subscription</div>
+                        <div class="tp-feat"><span class="tc">✓</span>All role feature hubs unlocked</div>
+                        <div class="tp-feat"><span class="tc">✓</span>New members auto-get premium on joining</div>
+                        <div class="tp-feat"><span class="tc">✓</span>Unlimited penalties &amp; categories</div>
+                        <div class="tp-feat"><span class="tc">✓</span>Full financial management &amp; season archives</div>
+                        <div class="tp-feat"><span class="tc">✓</span>All data exports &amp; priority support</div>
+                    </div>
+
+                    <div class="tp-right">
+                        <div class="tp-price"><sup style="font-size:1rem;">€</sup>19.99</div>
+                        <div class="tp-period">per month</div>
+                        <div class="tp-savings">€149.99/year — save ~37%</div>
+                        <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="tp-cta" target="_blank" rel="noopener">Get Team Plan →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-preview-footer reveal">
+                <p>Save up to 2 months with yearly billing. The TEAM plan covers up to 50 members — one subscription for your whole squad. Full comparison below.</p>
+                <a href="features.html" class="btn btn-primary">View Full Pricing & Feature Comparison →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMAIL CAPTURE -->
+    <section class="email-section">
+        <div class="container">
+            <div class="email-card reveal">
+                <div class="section-badge" style="display:inline-flex; margin-bottom:20px;">✉️ Stay Updated</div>
+                <h2 class="email-title">Get feature updates<br>& team management tips</h2>
+                <p class="email-subtitle">Join the TEAM WALLET X community. Be the first to know about new features, tips for your team, and app updates.</p>
+
+                <div class="email-form" id="email-form">
+                    <input type="email" class="email-input" id="email-input" placeholder="your@email.com" autocomplete="email">
+                    <button type="button" class="email-submit" id="email-submit">Notify Me</button>
+                </div>
+
+                <div class="email-success" id="email-success">
+                    <div class="email-success-icon">✓</div>
+                    <div class="email-success-text">You're on the list! We'll be in touch.</div>
+                </div>
+
+                <div class="email-note">No spam, ever. Unsubscribe at any time.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container-narrow">
+            <div class="section-header centered reveal">
+                <div class="section-badge">❓ FAQ</div>
+                <h2 class="section-title">Frequently asked questions</h2>
+                <p class="section-subtitle">Everything you need to know about TEAM WALLET X.</p>
+            </div>
+
+            <div class="faq-categories reveal">
+                <button class="faq-cat active" data-cat="all">All</button>
+                <button class="faq-cat" data-cat="features">Features</button>
+                <button class="faq-cat" data-cat="pricing">Pricing</button>
+                <button class="faq-cat" data-cat="roles">Roles</button>
+                <button class="faq-cat" data-cat="technical">Technical</button>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item" data-cat="features">
+                    <div class="faq-question">
+                        <span class="faq-question-text">What is TEAM WALLET X and how does it help sports teams?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>TEAM WALLET X is a comprehensive <span class="faq-highlight">sports team management platform</span> that replaces spreadsheets, WhatsApp groups, and manual admin work.</p>
+                            <ul>
+                                <li><strong>Penalty Tracking:</strong> Automated fine calculations, assignments, and payment reminders</li>
+                                <li><strong>Financial Management:</strong> Complete team budget and transaction tracking</li>
+                                <li><strong>Equipment Inventory:</strong> Full lifecycle tracking from purchase to retirement</li>
+                                <li><strong>Team Communication:</strong> Announcements, votings, and integrated chat</li>
+                                <li><strong>Gamification:</strong> Achievements, leaderboards, and clean sheet tracking</li>
+                                <li><strong>Season Management:</strong> Close seasons, roll over data, browse archives</li>
+                                <li><strong>Role Feature Hubs:</strong> 10 role-specific premium toolkits (Lineup Builder, Injury Tracker, Meal Plans, and more)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="pricing">
+                    <div class="faq-question">
+                        <span class="faq-question-text">How much does TEAM WALLET X cost?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>TEAM WALLET X offers <span class="faq-highlight">role-based pricing</span> so you only pay for the features you need:</p>
+                            <ul>
+                                <li><strong>Player:</strong> €1.99/month (€19.99/year) — Personal stats, achievements, team chat, Personal Goals hub</li>
+                                <li><strong>Staff:</strong> €3.99/month (€39.99/year) — Team analytics, calendar management, role-specific hub</li>
+                                <li><strong>Coach:</strong> €5.99/month (€59.99/year) — Lineup Builder, Training Attendance, penalty management</li>
+                                <li><strong>Admin:</strong> €7.99/month (€79.99/year) — Full financial control, season management, Budget Planner hub</li>
+                                <li><strong>TEAM:</strong> €19.99/month (€149.99/year) — One admin pays, every team member (up to 50) gets full premium access automatically</li>
+                            </ul>
+                            <p>Yearly plans save you <span class="faq-highlight">2 months</span> compared to monthly billing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="pricing">
+                    <div class="faq-question">
+                        <span class="faq-question-text">Is there a free version or free trial?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes! TEAM WALLET X includes a <span class="faq-highlight">free tier</span> with core functionality:</p>
+                            <ul>
+                                <li>View penalties, team calendar, and announcements</li>
+                                <li>View and request equipment</li>
+                                <li>View personal balance</li>
+                                <li>Up to 16 team members and 10 penalties</li>
+                            </ul>
+                            <p>Upgrade to any paid tier when you're ready to unlock the full feature set.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="roles">
+                    <div class="faq-question">
+                        <span class="faq-question-text">What's the difference between the four roles?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Each role builds on the one below, with increasing levels of team management access:</p>
+                            <ul>
+                                <li><strong>Player:</strong> Personal stats, achievements, and team communication</li>
+                                <li><strong>Staff:</strong> Equipment management, calendar events, basic analytics</li>
+                                <li><strong>Coach:</strong> Penalty assignment, unlimited team size, advanced reporting</li>
+                                <li><strong>Admin:</strong> Full financial control, user permissions, all exports</li>
+                            </ul>
+                            <p>Users can hold <span class="faq-highlight">multiple roles simultaneously</span> — perfect for player-captains or coach-admins.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="features">
+                    <div class="faq-question">
+                        <span class="faq-question-text">How does the penalty tracking system work?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>The <span class="faq-highlight">automated penalty system</span> handles the entire fine lifecycle:</p>
+                            <ul>
+                                <li>Coaches create custom categories (late arrival, missed training, red card...)</li>
+                                <li>Coaches assign fines to players with one tap</li>
+                                <li>Players receive push notification reminders</li>
+                                <li>Admins mark penalties as paid and generate financial reports</li>
+                                <li>Full audit trail with timestamps and history</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="features">
+                    <div class="faq-question">
+                        <span class="faq-question-text">How does the Equipment & Inventory Management work?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>The <span class="faq-highlight">complete inventory system</span> covers every aspect of equipment management:</p>
+                            <ul>
+                                <li>Track every item with photos, sizes, conditions, and purchase info</li>
+                                <li>Assign equipment to players with due dates and return tracking</li>
+                                <li>Players can request equipment with size and priority</li>
+                                <li>Staff approve/deny requests and resolve issues</li>
+                                <li>AI-powered item scanner for quick inventory additions</li>
+                                <li>Severity-based issue reporting (Damaged / Lost / Defective)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="technical">
+                    <div class="faq-question">
+                        <span class="faq-question-text">Is my team's data secure?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Absolutely. TEAM WALLET X implements <span class="faq-highlight">enterprise-grade security</span>:</p>
+                            <ul>
+                                <li>End-to-end encryption for all data in transit and at rest</li>
+                                <li>Full GDPR compliance with data export and deletion options</li>
+                                <li>Biometric authentication (Face ID / Touch ID)</li>
+                                <li>Role-based access so users only see relevant data</li>
+                                <li>Secure keychain management on device</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="features">
+                    <div class="faq-question">
+                        <span class="faq-question-text">What are Role Feature Hubs and how do they work?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Role Feature Hubs are <span class="faq-highlight">dedicated premium toolkits</span> unlocked by your role subscription — purpose-built for the way you work in the team:</p>
+                            <ul>
+                                <li><strong>Admin:</strong> Budget Planner — track team income and expenses with full financial oversight</li>
+                                <li><strong>Player:</strong> Personal Goals — set, track, and achieve individual performance targets</li>
+                                <li><strong>Coach:</strong> Lineup Builder (linked to calendar matches) &amp; Training Attendance logging with Select All</li>
+                                <li><strong>Assistant Coach:</strong> Player Focus Notes — private, per-player development notes</li>
+                                <li><strong>Manager:</strong> Contract List — player contracts, strengths, and weaknesses, fully editable</li>
+                                <li><strong>Physiotherapist:</strong> Injury Tracker — severity levels, recovery timelines, return-to-play status</li>
+                                <li><strong>Team Doctor:</strong> Allergy &amp; Condition Registry — secure per-player medical records</li>
+                                <li><strong>Kit Manager:</strong> Pre-Match Checklists, AI Inventory Insights, Custom Types, Kit Assignments &amp; Requests</li>
+                                <li><strong>Analyst:</strong> Match Event Logs — detailed in-game event recording per player</li>
+                                <li><strong>Nutritionist:</strong> Meal Plan Templates — create and assign nutrition plans to players</li>
+                            </ul>
+                            <p>All hubs are accessible from the Profile tab's scrollable role carousel. <span class="faq-highlight">A premium subscription is required</span> to enter any hub.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="features">
+                    <div class="faq-question">
+                        <span class="faq-question-text">How does Season Management work?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Season Management lets admins <span class="faq-highlight">structure the team around a football season</span> and seamlessly transition to the next:</p>
+                            <ul>
+                                <li><strong>Active Season:</strong> All app data (penalties, finances, equipment, calendar) reflects the currently selected season</li>
+                                <li><strong>Close Season Wizard:</strong> A guided wizard walks the admin through rolling over members, wallet balances, and equipment at the end of the year</li>
+                                <li><strong>Wallet Carryover Choice:</strong> Admin decides whether to carry over player wallet balances into the new season as an opening entry, or reset to €0</li>
+                                <li><strong>Season Archives (Premium):</strong> Past seasons are available as read-only archives — every penalty, financial report, and statistic preserved</li>
+                                <li><strong>Season Champion Badge:</strong> The top-ranked player when a season closes earns a permanent Champion badge</li>
+                                <li><strong>Season Switcher:</strong> Switch between seasons from the Home tab — all tabs update automatically to reflect the selected season's data</li>
+                            </ul>
+                            <p>Browsing past seasons is a <span class="faq-highlight">premium feature</span>. Season management itself (creating and closing) is available to all admin users.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="roles">
+                    <div class="faq-question">
+                        <span class="faq-question-text">Can a user hold multiple roles simultaneously?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes — TEAM WALLET X fully supports <span class="faq-highlight">multi-role users</span>. A player can also be a coach, or an admin can hold a secondary specialist role like Physiotherapist or Analyst.</p>
+                            <ul>
+                                <li>Admins are <strong>required</strong> to have at least one secondary role by design</li>
+                                <li>All assigned roles unlock their respective Feature Hubs simultaneously</li>
+                                <li>A scrollable Role Carousel in the Profile tab lets you navigate between all your role hubs</li>
+                                <li>Roles are assigned by the admin and visible to the full team</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="technical">
+                    <div class="faq-question">
+                        <span class="faq-question-text">Is TEAM WALLET X available on Android?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Currently, TEAM WALLET X is available exclusively on <span class="faq-highlight">iOS (iPhone and iPad)</span>, requiring iOS 17.0 or later.</p>
+                            <p>We focused on iOS first to deliver the best possible experience with native performance, seamless integration with iOS features, and premium design quality. Android expansion is being evaluated based on user demand.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="cta-bg-orb"></div>
+        <div class="container">
+            <div class="cta-inner reveal">
+                <div class="section-badge" style="display:inline-flex; margin-bottom:24px;">🚀 Get Started</div>
+                <h2 class="cta-title">Ready to transform your<br><span class="gradient-text">team management?</span></h2>
+                <p class="cta-desc">Join teams across Europe already using TEAM WALLET X to streamline operations, boost engagement, and build winning cultures.</p>
+                <div class="cta-actions">
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="btn-app-store" target="_blank" rel="noopener">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height:64px; filter: drop-shadow(0 8px 24px rgba(204,255,0,0.35));">
+                    </a>
+                    <div class="cta-trust">
+                        <div class="cta-trust-item">
+                            <span class="cta-trust-icon">⭐</span>
+                            iOS 17.0+
+                        </div>
+                        <div class="cta-trust-item">
+                            <span class="cta-trust-icon">🔒</span>
+                            GDPR Compliant
+                        </div>
+                        <div class="cta-trust-item">
+                            <span class="cta-trust-icon">💸</span>
+                            Free to Start
+                        </div>
+                        <div class="cta-trust-item">
+                            <span class="cta-trust-icon">📱</span>
+                            iPhone & iPad
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="bildmarke.svg" width="32" height="32" alt="TEAM WALLET X logo" style="flex-shrink:0;filter:invert(1);">
+                        TEAM WALLET X
+                    </div>
+                    <p>The all-in-one iOS app for sports team management. Penalties, finances, equipment, and communication — all in one powerful platform.</p>
+                    <a href="https://apps.apple.com/at/app/teamwalletx/id6747883595" class="footer-store-badge" target="_blank" rel="noopener">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                    </a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="features.html">Pricing</a>
+                    <a href="#how-it-works">How it Works</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="https://teamwalletx.store" target="_blank" rel="noopener">Shop</a>
+                    <a href="#contact">Contact</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:info@teamwalletx.app">info@teamwalletx.app</a>
+                    <a href="data-protection.html">Data Protection (GDPR)</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    <div class="footer-copyright">© 2026 TEAM WALLET X. All rights reserved.</div>
+                    <div class="footer-apple-note">Apple and App Store are trademarks of Apple Inc., registered in the U.S. and other countries.</div>
+                </div>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms-of-service.html">Terms</a>
+                    <a href="data-protection.html">GDPR</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // =============================================
+        // NAV SCROLL BEHAVIOR
+        // =============================================
+        const nav = document.getElementById('nav');
+        let lastScrollY = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            lastScrollY = scrollY;
+        }, { passive: true });
+
+        // =============================================
+        // MOBILE MENU
+        // =============================================
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenu.addEventListener('click', e => {
+            if (e.target === mobileMenu) closeMobileMenu();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeMobileMenu();
+        });
+
+        // =============================================
+        // SCROLL REVEAL WITH INTERSECTION OBSERVER
+        // =============================================
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.08,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // =============================================
+        // COUNTER ANIMATION
+        // =============================================
+        function animateCounter(el, target, suffix) {
+            const duration = 1600;
+            const startTime = performance.now();
+            const startValue = 0;
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(startValue + (target - startValue) * eased);
+                el.textContent = current + (suffix || '');
+                if (progress < 1) requestAnimationFrame(update);
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    const suffix = el.dataset.suffix || '';
+                    if (!isNaN(target)) animateCounter(el, target, suffix);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+            counterObserver.observe(el);
+        });
+
+        // Animate progress bars when visible
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = entry.target.dataset.width || entry.target.style.width;
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.mock-progress-fill').forEach(el => {
+            progressObserver.observe(el);
+        });
+
+        // =============================================
+        // FAQ ACCORDION
+        // =============================================
+        const faqItems = document.querySelectorAll('.faq-item');
+        const faqCats = document.querySelectorAll('.faq-cat');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const toggle = item.querySelector('.faq-toggle');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                faqItems.forEach(other => {
+                    other.classList.remove('active');
+                    other.querySelector('.faq-toggle').textContent = '+';
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    toggle.textContent = '×';
+                }
+            });
+        });
+
+        faqCats.forEach(cat => {
+            cat.addEventListener('click', () => {
+                const selectedCat = cat.dataset.cat;
+                faqCats.forEach(c => c.classList.remove('active'));
+                cat.classList.add('active');
+
+                faqItems.forEach(item => {
+                    const itemCat = item.dataset.cat;
+                    if (selectedCat === 'all' || itemCat === selectedCat) {
+                        item.style.display = '';
+                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(12px)';
+                        setTimeout(() => { item.style.display = 'none'; }, 300);
+                    }
+                    item.classList.remove('active');
+                    const toggle = item.querySelector('.faq-toggle');
+                    if (toggle) toggle.textContent = '+';
+                });
+            });
+        });
+
+        // =============================================
+        // EMAIL FORM
+        // =============================================
+        const emailForm = document.getElementById('email-form');
+        const emailInput = document.getElementById('email-input');
+        const emailSubmit = document.getElementById('email-submit');
+        const emailSuccess = document.getElementById('email-success');
+
+        emailSubmit.addEventListener('click', () => {
+            const email = emailInput.value.trim();
+            if (!email || !email.includes('@')) {
+                emailInput.style.borderColor = 'rgba(255,60,60,0.5)';
+                emailInput.focus();
+                return;
+            }
+            emailForm.style.display = 'none';
+            emailSuccess.classList.add('visible');
+        });
+
+        emailInput.addEventListener('input', () => {
+            emailInput.style.borderColor = '';
+        });
+
+        emailInput.addEventListener('keydown', e => {
+            if (e.key === 'Enter') emailSubmit.click();
+        });
+
+        // =============================================
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        // =============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png?v=2">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#CCFF00">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* =============================================
+           DESIGN TOKENS
+        ============================================= */
+        :root {
+            --brand: #CCFF00;
+            --brand-dark: #66CC00;
+            --brand-glow: rgba(204, 255, 0, 0.4);
+            --brand-subtle: rgba(204, 255, 0, 0.07);
+            --brand-border: rgba(204, 255, 0, 0.2);
+            --brand-border-strong: rgba(204, 255, 0, 0.5);
+
+            --bg: #000000;
+            --bg-1: #0A0A0A;
+            --bg-card: #111111;
+            --bg-card-alt: #141414;
+            --bg-glass: rgba(10, 10, 10, 0.8);
+
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.72);
+            --text-muted: rgba(255, 255, 255, 0.38);
+            --text-disabled: rgba(255, 255, 255, 0.2);
+
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(255, 255, 255, 0.15);
+
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-2xl: 40px;
+            --radius-full: 9999px;
+
+            --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.6);
+            --shadow-glow: 0 0 60px rgba(204, 255, 0, 0.18);
+            --shadow-glow-strong: 0 0 80px rgba(204, 255, 0, 0.3);
+
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+            --nav-height: 72px;
+            --container: 1200px;
+            --container-narrow: 800px;
+        }
+
+        /* =============================================
+           RESET & BASE
+        ============================================= */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection { background: rgba(204, 255, 0, 0.25); color: white; }
+
+        img { display: block; max-width: 100%; }
+        a { text-decoration: none; color: inherit; }
+        button { font-family: inherit; cursor: pointer; }
+        ul { list-style: none; }
+
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: var(--container-narrow);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* =============================================
+           TYPOGRAPHY
+        ============================================= */
+        .gradient-text {
+            background: linear-gradient(120deg, var(--brand) 0%, var(--brand-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--brand);
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            background: var(--brand-subtle);
+            border: 1px solid var(--brand-border);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--brand);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 560px;
+        }
+
+        .section-header {
+            margin-bottom: 64px;
+        }
+
+        .section-header.centered {
+            text-align: center;
+        }
+
+        .section-header.centered .section-subtitle {
+            margin: 0 auto;
+        }
+
+        /* =============================================
+           BUTTONS
+        ============================================= */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--brand);
+            color: #000;
+            padding: 14px 28px;
+            border-radius: var(--radius-full);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px var(--brand-glow);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 14px 28px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border-hover);
+        }
+
+        .btn-ghost:hover {
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-app-store {
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .btn-app-store img {
+            height: 56px;
+            width: auto;
+            filter: drop-shadow(0 4px 16px rgba(204, 255, 0, 0.2));
+        }
+
+        .btn-app-store:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-app-store:hover img {
+            filter: drop-shadow(0 8px 24px rgba(204, 255, 0, 0.4));
+        }
+
+        /* =============================================
+           NAVIGATION
+        ============================================= */
+        .nav-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            padding: 12px 0;
+            transition: var(--transition);
+        }
+
+        .nav-wrapper.scrolled {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border);
+            padding: 8px 0;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: white;
+        }
+
+        .nav-logo-badge {
+            width: 34px;
+            height: 34px;
+            background: var(--brand);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 900;
+            color: #000;
+            letter-spacing: -0.02em;
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .nav-links a.active {
+            color: var(--brand);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .nav-cta a.btn-primary {
+            padding: 9px 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Mobile nav */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle svg { display: block; }
+
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.97);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .mobile-menu-overlay.open {
+            display: flex;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .mobile-menu-overlay a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            padding: 12px 32px;
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-overlay a:hover {
+            color: var(--brand);
+        }
+
+        .mobile-menu-overlay .mobile-app-btn {
+            margin-top: 16px;
+        }
+
+        /* =============================================
+           HERO
+        ============================================= */
+        .hero {
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            padding-top: var(--nav-height);
+            padding-bottom: 80px;
+            position: relative;
+            overflow: clip;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .hero-dot-grid {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(204, 255, 0, 0.12) 1px, transparent 1px);
+            background-size: 32px 32px;
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(80px);
+        }
+
+        .hero-orb-1 {
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(204, 255, 0, 0.12) 0%, transparent 65%);
+            top: -15%;
+            right: -5%;
+        }
+
+        .hero-orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(102, 204, 0, 0.1) 0%, transparent 65%);
+            bottom: 0;
+            left: -10%;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding-top: 40px;
+        }
+
+        .hero-text { position: relative; z-index: 2; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: var(--brand-subtle);
+            border: 1px solid var(--brand-border);
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--brand);
+            margin-bottom: 28px;
+        }
+
+        .badge-pulse {
+            width: 7px;
+            height: 7px;
+            background: var(--brand);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.0;
+            letter-spacing: -0.04em;
+            margin-bottom: 24px;
+        }
+
+        .hero-title .line-accent {
+            display: block;
+            background: linear-gradient(120deg, var(--brand) 0%, var(--brand-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 40px;
+            max-width: 480px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            padding: 0 16px;
+        }
+
+        .trust-item:first-child { padding-left: 0; }
+
+        .trust-icon { font-size: 0.9rem; }
+
+        .trust-sep {
+            width: 1px;
+            height: 16px;
+            background: var(--border);
+        }
+
+        /* =============================================
+           PHONE MOCKUP
+        ============================================= */
+        .hero-visual {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 620px;
+            padding: 0 130px;
+        }
+
+        .phone-wrapper {
+            position: relative;
+            z-index: 0;
+        }
+
+        .iphone-frame {
+            width: 270px;
+            height: 558px;
+            background: #181818;
+            border-radius: 50px;
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,0.12),
+                0 0 0 9px #0E0E0E,
+                0 0 0 10px rgba(255,255,255,0.05),
+                0 50px 120px rgba(0,0,0,0.9),
+                var(--shadow-glow);
+        }
+
+        .iphone-dynamic-island {
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 28px;
+            background: #000;
+            border-radius: 20px;
+            z-index: 20;
+        }
+
+        .iphone-screen {
+            width: 100%;
+            height: 100%;
+            background: #050505;
+            border-radius: 42px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* App UI inside phone */
+        .app-screen {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            font-family: -apple-system, 'Inter', sans-serif;
+        }
+
+        .app-status-bar {
+            height: 52px;
+            padding: 18px 22px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .app-status-time {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .app-status-icons {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .app-status-icons span {
+            font-size: 0.65rem;
+            color: white;
+        }
+
+        .app-header {
+            padding: 12px 20px 16px;
+            flex-shrink: 0;
+        }
+
+        .app-header-greeting {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .app-header-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.03em;
+        }
+
+        .app-header-title span { color: #CCFF00; }
+
+        .app-body {
+            flex: 1;
+            overflow: hidden;
+            padding: 0 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .app-stats-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .app-stat-card {
+            background: #111;
+            border-radius: 14px;
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .app-stat-label {
+            font-size: 0.62rem;
+            color: rgba(255,255,255,0.45);
+            font-weight: 500;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .app-stat-value {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #CCFF00;
+            letter-spacing: -0.03em;
+        }
+
+        .app-stat-value.white { color: white; }
+
+        .app-section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 4px;
+        }
+
+        .app-leaderboard {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .app-lb-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #111;
+            border-radius: 11px;
+            padding: 9px 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .app-lb-row.highlighted {
+            border-color: rgba(204,255,0,0.25);
+            background: rgba(204,255,0,0.06);
+        }
+
+        .app-lb-rank {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: rgba(255,255,255,0.4);
+            width: 14px;
+            text-align: center;
+        }
+
+        .app-lb-rank.gold { color: #FFD700; }
+
+        .app-lb-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #CCFF00, #66CC00);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .app-lb-name {
+            flex: 1;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .app-lb-score {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.45);
+        }
+
+        .app-lb-score.green { color: #CCFF00; }
+
+        .app-tab-bar {
+            height: 58px;
+            background: rgba(20,20,20,0.95);
+            border-top: 1px solid rgba(255,255,255,0.07);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 8px;
+            padding-bottom: 8px;
+            flex-shrink: 0;
+        }
+
+        .app-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .app-tab-icon {
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .app-tab-label {
+            font-size: 0.5rem;
+            color: rgba(255,255,255,0.35);
+            font-weight: 500;
+        }
+
+        .app-tab.active .app-tab-label { color: #CCFF00; }
+
+        /* Floating UI elements */
+        .float-card {
+            position: absolute;
+            z-index: 10;
+            background: rgba(18, 18, 18, 0.92);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: var(--radius-lg);
+            padding: 12px 16px;
+            min-width: 170px;
+            box-shadow:
+                0 8px 32px rgba(0,0,0,0.6),
+                0 2px 8px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+
+        .float-card-1 {
+            top: 40px;
+            right: -115px;
+            animation: floatY 4s ease-in-out infinite;
+        }
+
+        .float-card-2 {
+            bottom: 100px;
+            left: -125px;
+            animation: floatY 4s ease-in-out infinite 1.5s;
+        }
+
+        .float-card-3 {
+            top: 220px;
+            right: -125px;
+            animation: floatY 4s ease-in-out infinite 3s;
+        }
+
+        @keyframes floatY {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float-card-icon {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+
+        .float-card-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 3px;
+        }
+
+        .float-card-sub {
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.55);
+        }
+
+        .float-badge {
+            position: absolute;
+            z-index: 10;
+            top: 12px;
+            left: -90px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(204, 255, 0, 0.15);
+            border: 1px solid rgba(204, 255, 0, 0.4);
+            border-radius: var(--radius-full);
+            padding: 8px 14px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--brand);
+            white-space: nowrap;
+            box-shadow: 0 4px 20px rgba(204, 255, 0, 0.12), 0 8px 24px rgba(0,0,0,0.5);
+            animation: floatY 5s ease-in-out infinite 0.5s;
+        }
+
+        /* =============================================
+           STATS SECTION
+        ============================================= */
+        .stats-section {
+            padding: 48px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(204,255,0,0.04) 0%, transparent 60%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 16px;
+            position: relative;
+        }
+
+        .stat-item + .stat-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            color: var(--brand);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* =============================================
+           FEATURES SECTION (BENTO)
+        ============================================= */
+        .features-section {
+            padding: 120px 0;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto;
+            gap: 16px;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(204,255,0,0.04), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .bento-card:hover {
+            border-color: var(--brand-border);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .bento-card:hover::before { opacity: 1; }
+
+        .bento-card.large { grid-column: span 5; grid-row: span 2; }
+        .bento-card.medium-wide { grid-column: span 7; }
+        .bento-card.medium { grid-column: span 4; }
+        .bento-card.wide { grid-column: span 8; }
+        .bento-card.small { grid-column: span 4; }
+
+        .bento-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--brand-subtle);
+            border: 1px solid var(--brand-border);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .bento-card.large .bento-icon {
+            width: 64px;
+            height: 64px;
+            font-size: 2rem;
+            border-radius: var(--radius-lg);
+        }
+
+        .bento-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            background: rgba(204,255,0,0.12);
+            border: 1px solid var(--brand-border);
+            border-radius: var(--radius-full);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--brand);
+            margin-bottom: 12px;
+        }
+
+        .bento-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .bento-card.large .bento-title {
+            font-size: 1.45rem;
+        }
+
+        .bento-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .bento-mini-list {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .bento-mini-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .bento-mini-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--brand);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .bento-stat-row {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .bento-stat {
+            flex: 1;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            text-align: center;
+        }
+
+        .bento-stat-val {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--brand);
+            letter-spacing: -0.03em;
+        }
+
+        .bento-stat-name {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* =============================================
+           SHOWCASE SECTIONS
+        ============================================= */
+        .showcase-section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .showcase-section + .showcase-section {
+            padding-top: 40px;
+        }
+
+        .showcase-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .showcase-inner.reverse { direction: rtl; }
+        .showcase-inner.reverse > * { direction: ltr; }
+
+        .showcase-text .section-badge { display: inline-flex; }
+
+        .showcase-title {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .showcase-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 32px;
+        }
+
+        .showcase-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .showcase-feature {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .sf-icon-wrap {
+            width: 40px;
+            height: 40px;
+            background: var(--brand-subtle);
+            border: 1px solid var(--brand-border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .sf-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .sf-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        .showcase-visual {
+            background: linear-gradient(160deg, var(--bg-card) 0%, #0A0A0A 100%);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .showcase-visual-inner {
+            padding: 36px;
+        }
+
+        .showcase-visual:hover {
+            border-color: var(--brand-border);
+        }
+
+        /* mini app UI cards inside showcase visual */
+        .mock-card {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-md);
+            padding: 14px 16px;
+            margin-bottom: 10px;
+        }
+
+        .mock-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .mock-card-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .mock-badge {
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .mock-badge.green { background: rgba(204,255,0,0.15); color: #CCFF00; border: 1px solid rgba(204,255,0,0.3); }
+        .mock-badge.amber { background: rgba(255,180,0,0.15); color: #FFB400; border: 1px solid rgba(255,180,0,0.3); }
+        .mock-badge.red { background: rgba(255,60,60,0.15); color: #FF3C3C; border: 1px solid rgba(255,60,60,0.3); }
+
+        .mock-card-body {
+            font-size: 0.77rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .mock-progress-bar {
+            height: 4px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .mock-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+            border-radius: 2px;
+            transition: width 1.5s ease;
+        }
+
+        /* =============================================
+           HOW IT WORKS
+        ============================================= */
+        .how-section {
+            padding: 120px 0;
+            background: linear-gradient(180deg, transparent, rgba(204,255,0,0.03) 50%, transparent);
+            position: relative;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            position: relative;
+            margin-top: 64px;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: calc(16.67% + 16px);
+            right: calc(16.67% + 16px);
+            height: 1px;
+            background: linear-gradient(90deg, var(--brand-border), var(--brand-border-strong), var(--brand-border));
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-num {
+            width: 64px;
+            height: 64px;
+            background: var(--brand-subtle);
+            border: 2px solid var(--brand-border);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--brand);
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .step-card:hover .step-num {
+            background: var(--brand);
+            color: #000;
+            border-color: var(--brand);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .step-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .step-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* =============================================
+           TESTIMONIALS
+        ============================================= */
+        .testimonials-section {
+            padding: 120px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 64px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--brand-border);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 16px;
+        }
+
+        .star { color: #CCFF00; font-size: 0.9rem; }
+
+        .testimonial-quote {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #000;
+            flex-shrink: 0;
+        }
+
+        .author-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .author-role {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* =============================================
+           PRICING PREVIEW
+        ============================================= */
+        .pricing-preview-section {
+            padding: 120px 0;
+            background: linear-gradient(180deg, transparent, rgba(204,255,0,0.02) 50%, transparent);
+        }
+
+        .pricing-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 64px;
+        }
+
+        .plan-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 28px 24px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-card:hover {
+            border-color: var(--brand-border);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .plan-card.featured {
+            border-color: var(--brand-border-strong);
+            background: linear-gradient(160deg, rgba(204,255,0,0.07), var(--bg-card));
+            box-shadow: 0 0 0 1px rgba(204,255,0,0.15), var(--shadow-glow);
+        }
+
+        .plan-card.featured:hover {
+            box-shadow: 0 0 0 1px rgba(204,255,0,0.3), var(--shadow-glow-strong);
+        }
+
+        .plan-popular-tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--brand);
+            color: #000;
+            text-align: center;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 6px;
+        }
+
+        .plan-card.featured .plan-body { margin-top: 12px; }
+
+        .plan-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--brand-subtle);
+            border: 1px solid var(--brand-border);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .plan-name {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .plan-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .plan-price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            letter-spacing: -0.04em;
+            line-height: 1;
+        }
+
+        .plan-price sup {
+            font-size: 1rem;
+            font-weight: 600;
+            vertical-align: super;
+        }
+
+        .plan-period {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .plan-features {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            margin-bottom: 24px;
+        }
+
+        .plan-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .plan-check {
+            color: var(--brand);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .plan-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 11px;
+            border-radius: var(--radius-md);
+            font-size: 0.88rem;
+            font-weight: 700;
+            transition: var(--transition);
+            border: 1px solid var(--brand-border);
+            color: var(--brand);
+            background: transparent;
+        }
+
+        .plan-btn:hover {
+            background: var(--brand);
+            color: #000;
+            border-color: var(--brand);
+        }
+
+        .plan-card.featured .plan-btn {
+            background: var(--brand);
+            color: #000;
+            border-color: var(--brand);
+        }
+
+        .plan-card.featured .plan-btn:hover {
+            background: white;
+            border-color: white;
+        }
+
         .pricing-preview-footer {
             text-align: center;
             margin-top: 40px;
